@@ -7,7 +7,15 @@ public class Organization
     protected string Name;
     protected DateTime Date;
     protected ISoldier Commander;
-    protected List<ICombatUnit> Soldiers;
     
 }
 
+public class IdfOperation : Organization
+{
+    private List<ICombatUnit> Soldiers;
+}
+
+public class HamasOperation: Organization
+{
+    private List<ITerrorist> Terrorists;
+}
