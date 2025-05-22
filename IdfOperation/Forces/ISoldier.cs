@@ -2,6 +2,6 @@ namespace IdfOperation.Forces;
 
 public interface ISoldier : ICombatUnit
 {
-    int Rank { get; }
+    int Rank { get; set; }
     
 }
