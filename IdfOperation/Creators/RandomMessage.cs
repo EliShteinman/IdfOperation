@@ -21,6 +21,7 @@ namespace IdfOperation.Creators
         {
             this.terrorist = GetTerrorist(hamas);
             this.zone = GetZone();
+            this.date = GetDateTime();
 
         }
         private ITerrorist GetTerrorist(HamasOperation hamas)
@@ -34,12 +35,12 @@ namespace IdfOperation.Creators
             Random rnd = new Random();
             return zone[rnd.Next(0, zone.Length)]; 
         }
-        private Random gen = new Random();
-        DateTime RandomDay()
+        private DateTime GetDateTime()
         {
-            DateTime start = new DateTime(1995, 1, 1);
+            Random rnd = new Random();
+            DateTime start = new DateTime(2023, 1, 1);
             int range = (DateTime.Today - start).Days;
-            return start.AddDays(gen.Next(range));
+            return start.AddDays(rnd.Next(range));
         }
     }
 }

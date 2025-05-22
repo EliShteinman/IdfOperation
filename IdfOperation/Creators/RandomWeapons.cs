@@ -1,4 +1,4 @@
-namespace IdfOperation.Creators;
+﻿namespace IdfOperation.Creators;
 
 public class RandomWeapons : Weapons
 {
