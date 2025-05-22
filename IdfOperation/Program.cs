@@ -1,11 +1,10 @@
-﻿namespace IdfOperation;
-
+﻿using System;
+using IdfOperation.NameGenerator;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        Console.WriteLine("Hello, World!");
+        
     }
 }
-
