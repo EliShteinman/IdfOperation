@@ -11,12 +11,6 @@ namespace IdfOperation.Intelligence
         ITerrorist terrorist;
         string zone;
         DateTime date;
-        public Message(ITerrorist terrorist, string zone, DateTime date)
-        {
-            this.terrorist = terrorist;
-            this.zone = zone;
-            this.date = date;
-        } 
     }
 
 }
