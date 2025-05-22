@@ -1,4 +1,4 @@
-namespace IdfOperation.Forces;
+﻿namespace IdfOperation.Forces;
 
 public class Plane : IStrikeUnit
 {
