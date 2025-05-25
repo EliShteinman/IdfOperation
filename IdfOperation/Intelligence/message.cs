@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using IdfOperation.Forces;
+﻿using IdfOperation.Forces.Terror;
 namespace IdfOperation.Intelligence
 {
-    internal class Message
+    internal abstract class Message
     {
-        ITerrorist terrorist;
-        string zone;
-        DateTime date;
-    }
+        public Terrorist Terrorist { get; protected set; }
+        public string Zone { get; protected set; }
+        public DateTime Date { get; protected set; }
 
+        protected Message(Terrorist terrorist, string zone, DateTime date)
+        {
+            Terrorist = terrorist;
+            Zone = zone;
+            Date = date;
+        }
+    }
 }

@@ -1,7 +1,4 @@
-using IdfOperation.Forces;
-
-namespace IdfOperation.Creators;
-
+namespace IdfOperation.Forces.Terror;
 public class Weapons : IWeapon
 {
     public int Score { get; }

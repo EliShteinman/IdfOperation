@@ -1,4 +1,4 @@
-using IdfOperation.Forces;
+using IdfOperation.Forces.Terror;
 
 namespace IdfOperation.Intelligence;
 

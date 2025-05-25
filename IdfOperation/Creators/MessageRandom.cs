@@ -1,46 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-
-using IdfOperation.Forces;
+﻿using IdfOperation.Forces.Terror;
 using IdfOperation.Intelligence;
-
 
 namespace IdfOperation.Creators
 {
     internal class MessageRandom : Message
     {
-        public ITerrorist terrorist;
-        public string zone;
-        public DateTime date;
+        private static readonly Random _random = new Random();
 
-        public MessageRandom(HamasOperation hamas)
-        {
-            this.terrorist = GetTerrorist(hamas);
-            this.zone = GetZone();
-            this.date = GetDateTime();
 
-        }
-        private ITerrorist GetTerrorist(HamasOperation hamas)
+        public MessageRandom(TerrorOperation terror)
+            : base(
+                GetTerrorist(terror),
+                GetZone(),
+                GetDateTime()
+            )
         {
-            Random rnd = new Random();
-            return hamas.Terrorists[rnd.Next(0, hamas.Terrorists.Count)];
+            if (terror.Terrorists.Count == 0)
+                throw new ArgumentException("No terrorists found in the operation.");
         }
-        private string GetZone()
+
+        private static Terrorist GetTerrorist(TerrorOperation terror)
         {
-            string[] zone = ["At home", "By car", "On the street"];
-            Random rnd = new Random();
-            return zone[rnd.Next(0, zone.Length)];
+            return terror.Terrorists[_random.Next(terror.Terrorists.Count)];
         }
-        private DateTime GetDateTime()
+
+        private static string GetZone()
         {
-            Random rnd = new Random();
+            string[] zones = new[] { "At home", "By car", "On the street" };
+            return zones[_random.Next(zones.Length)];
+        }
+
+        private static DateTime GetDateTime()
+        {
             DateTime start = new DateTime(2023, 1, 1);
             int range = (DateTime.Today - start).Days;
-            return start.AddDays(rnd.Next(range));
+            return start.AddDays(_random.Next(range));
         }
     }
 }

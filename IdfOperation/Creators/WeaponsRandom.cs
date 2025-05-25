@@ -1,8 +1,9 @@
-﻿using IdfOperation.Forces;
+﻿using IdfOperation.Forces.Terror;
 namespace IdfOperation.Creators;
 
 public class WeaponsRandom : WeaponBase
 {
+    private static readonly Random _random = new Random();
     public WeaponsRandom() : base(GetRandomType() )
         {
             
@@ -11,8 +12,7 @@ public class WeaponsRandom : WeaponBase
         private static string GetRandomType()
         {
             string[] weapons = new[] {"knife", "gun", "M16", "AK47"};
-            Random r = new Random();
-            return weapons[r.Next(weapons.Length)];
+            return weapons[_random.Next(weapons.Length)];
         }
 
         protected override int CalculateScore(string type)
@@ -21,23 +21,15 @@ public class WeaponsRandom : WeaponBase
             {
                 case "knife":
                     return  1;
-                    break;
                 case "gun":
                     return 2;
-                    break;
                 case "M16":
                     return 3;
-                    break;
                 case "AK47":
                     return 3;
-                    break;
                 default:
                     return 0;
-                    break;
             }
-
-            
         }
-
     
 }

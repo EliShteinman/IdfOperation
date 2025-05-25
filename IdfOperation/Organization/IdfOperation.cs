@@ -1,4 +1,5 @@
 using IdfOperation.Forces;
+using IdfOperation.Forces.Idf;
 
 namespace IdfOperation;
 

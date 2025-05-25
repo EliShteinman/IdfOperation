@@ -1,4 +1,4 @@
-namespace IdfOperation.Forces;
+namespace IdfOperation.Forces.Idf;
 
 public interface IStrikeUnit : ICombatUnit
 {
