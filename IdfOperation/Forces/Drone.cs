@@ -7,7 +7,7 @@ public class Drone : IStrikeUnit
     public int Ammunition { get; set; }
     public string TargetType { get; set; }
     public int StrikeCycleLimit { get; set; }
-    
+
     public bool Strike()
     {
         return true;

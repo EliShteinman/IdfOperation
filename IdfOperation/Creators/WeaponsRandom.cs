@@ -25,6 +25,6 @@ public class WeaponsRandom : Weapons
                 this.Score = 3;
                 break;
         }
-        
+
     }
 }
