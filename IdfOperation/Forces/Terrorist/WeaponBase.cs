@@ -1,6 +1,6 @@
 namespace IdfOperation.Forces;
 
-public abstract class WeaponBase
+public abstract class WeaponBase : IWeapon
 {
     public string Type { get; protected set; }
     public int Score { get; protected set; }
@@ -8,7 +8,7 @@ public abstract class WeaponBase
     protected WeaponBase(string type)
     {
         Type = type;
-        Score = CalculateScore(type); // ⬅️ קובע את הדרגה לפי סוג הנשק
+        Score = CalculateScore(type);
     }
 
     protected abstract int CalculateScore(string type);
