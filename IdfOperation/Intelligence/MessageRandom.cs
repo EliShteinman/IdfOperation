@@ -10,20 +10,20 @@ namespace IdfOperation.Intelligence
         private static readonly Random SharedRandom = new Random();
 
 
-        public MessageRandom(TerrorOr terrorOr)
+        public MessageRandom(TerrorOrg terrorOrg)
             : base(
-                GetTerrorist(terrorOr),
+                GetTerrorist(terrorOrg),
                 GetZone(),
                 GetDateTime()
             )
         {
-            if (terrorOr.Terrorists.Count == 0)
+            if (terrorOrg.Terrorists.Count == 0)
                 throw new ArgumentException("No terrorists found in the operation.");
         }
 
-        private static Terrorist GetTerrorist(TerrorOr terrorOr)
+        private static Terrorist GetTerrorist(TerrorOrg terrorOrg)
         {
-            return terrorOr.Terrorists[SharedRandom.Next(terrorOr.Terrorists.Count)];
+            return terrorOrg.Terrorists[SharedRandom.Next(terrorOrg.Terrorists.Count)];
         }
 
         private static string GetZone()

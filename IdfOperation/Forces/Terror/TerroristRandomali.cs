@@ -7,7 +7,7 @@ public class TerroristRandomali : Terrorist
 {
     private static readonly Random SharedRandom = new Random();
     private static readonly RandomName NameRandom = new RandomName();
-    public TerroristRandomali(TerrorOr terror)
+    public TerroristRandomali(TerrorOrg terror)
         : base(
             NameRandom.GenerateName(),
             SharedRandom.Next(1, 6),

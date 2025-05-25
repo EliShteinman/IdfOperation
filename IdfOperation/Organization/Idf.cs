@@ -3,7 +3,7 @@ using IdfOperation.Forces.Idf;
 
 namespace IdfOperation.Organization;
 
-public class Idf : Organization
+public class Idf : IOrganization
 {
     public string Name { get; set; }
     public DateTime Date { get; set; }
