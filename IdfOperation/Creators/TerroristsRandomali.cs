@@ -3,24 +3,28 @@ using IdfOperation.NameGenerator;
 namespace IdfOperation.Creators;
 
 // ;
-public class TerroristsRandomali : ITerrorist
+public class TerroristsRandomali : Terrorist
 {
-    public string Name { get; set; }
-    public int Rank { get; set; }
-    public bool Status { get; set; }
-    public List<IWeapon> Weapons { get; set; }
-
     public TerroristsRandomali(HamasOperation hamas)
+        : base(
+            new RandomName().GenerateName(),
+            new Random().Next(1, 6),
+            true,
+            GenerateWeapons()
+            )
+    
     {
-        RandomName generator = new RandomName();
+        hamas.Terrorists.Add(this);
+    }
+
+    private static List<WeaponBase> GenerateWeapons()
+    {
+        List<WeaponBase> list = new List<WeaponBase>();
         Random r = new Random();
-        this.Name = generator.GenerateName();
-        this.Rank = r.Next(1, 6);
-        this.Status = true;
         for (int i = 0; i < r.Next(1, 4); i++)
         {
-            this.Weapons.Add(new WeaponsRandom());
+            list.Add(new WeaponsRandom());
         }
-        hamas.Terrorists.Add(this);
+        return list;
     }
 }
