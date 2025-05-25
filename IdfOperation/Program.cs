@@ -1,4 +1,5 @@
-﻿using IdfOperation.Forces.Terror;
+﻿using IdfOperation.Forces.Idf;
+using IdfOperation.Forces.Terror;
 using IdfOperation.Organization;
 
 namespace IdfOperation;
@@ -12,6 +13,8 @@ class Program
         hamas.Commander = new TerroristRandomali(hamas);
         hamas.Date = DateTime.Now;
         Idf idf = new Idf();
-
+        idf.Name = "idf";
+        idf.Commander = new SoldierRandomli();
+        idf.Date = DateTime.Now;
     }
 }
