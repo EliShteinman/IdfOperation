@@ -1,4 +1,5 @@
 using IdfOperation.Forces.Terror;
+using IdfOperation.Organization;
 namespace IdfOperation.Creators;
 
 public class TerroristFactory
@@ -7,7 +8,7 @@ public class TerroristFactory
     {
         { "randomali", new RandomaliCreator() }
     };
-    public static Terrorist Create(string type, TerrorOperation operation)
+    public static Terrorist Create(string type, Terror operation)
     {
         if (!_creators.TryGetValue(type.ToLower(), out var creator))
             throw new ArgumentException($"Unknown terrorist type: {type}");

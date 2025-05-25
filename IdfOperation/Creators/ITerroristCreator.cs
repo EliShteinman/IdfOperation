@@ -1,7 +1,8 @@
 using IdfOperation.Forces.Terror;
+using IdfOperation.Organization;
 namespace IdfOperation.Creators;
 
 public interface ITerroristCreator
 {
-    Terrorist Create(TerrorOperation operation);
+    Terrorist Create(Terror operation);
 }

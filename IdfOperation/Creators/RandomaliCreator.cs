@@ -1,10 +1,12 @@
 using IdfOperation.Forces.Terror;
+using IdfOperation.Organization;
+
 namespace IdfOperation.Creators;
 
 public class RandomaliCreator : ITerroristCreator
 {
-    public Terrorist Create(TerrorOperation operation)
+    public Terrorist Create(Terror operation)
     {
-        return new TerroristsRandomali(operation);
+        return new TerroristRandomali(operation);
     }
 }

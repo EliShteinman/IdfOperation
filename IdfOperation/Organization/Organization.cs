@@ -1,12 +1,12 @@
 using IdfOperation.Forces;
 
-namespace IdfOperation;
+namespace IdfOperation.Organization;
 
 public interface Organization
 {
-    protected string Name { get; set; }
-    protected DateTime Date { get; set; }
-    protected ISoldier Commander { get; set; }
+    string Name { get; set; }
+    DateTime Date { get; set; }
+    ISoldier Commander { get; set; }
 
 }
 
