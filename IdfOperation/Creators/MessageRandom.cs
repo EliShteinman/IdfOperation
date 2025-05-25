@@ -16,7 +16,7 @@ namespace IdfOperation.Creators
         public ITerrorist terrorist;
         public string zone;
         public DateTime date;
-        
+
         public MessageRandom(HamasOperation hamas)
         {
             this.terrorist = GetTerrorist(hamas);
@@ -31,9 +31,9 @@ namespace IdfOperation.Creators
         }
         private string GetZone()
         {
-        string[] zone = ["At home", "By car", "On the street"];
+            string[] zone = ["At home", "By car", "On the street"];
             Random rnd = new Random();
-            return zone[rnd.Next(0, zone.Length)]; 
+            return zone[rnd.Next(0, zone.Length)];
         }
         private DateTime GetDateTime()
         {
