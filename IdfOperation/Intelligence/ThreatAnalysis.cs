@@ -7,7 +7,7 @@ public static class ThreatAnalysis
     public static int Analysis(Terrorist terrorist)
     {
         int risk = 0;
-        foreach (IWeapon weapon in terrorist.Weapons)
+        foreach (WeaponBase weapon in terrorist.Weapons)
         {
             risk += weapon.Score;
         }
