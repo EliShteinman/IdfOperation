@@ -1,19 +1,20 @@
 using IdfOperation.NameGenerator;
-using IdfOperation.Creators;
+using IdfOperation.Organization;
 namespace IdfOperation.Forces.Terror;
 
-// ;
-public class TerroristsRandomali : Terrorist
+
+public class TerroristRandomali : Terrorist
 {
-    private static readonly Random _random = new Random();
-    public TerroristsRandomali(TerrorOperation terror)
+    private static readonly Random SharedRandom = new Random();
+    private static readonly RandomName NameRandom = new RandomName();
+    public TerroristRandomali(TerrorOrg terror)
         : base(
-            new RandomName().GenerateName(),
-            _random.Next(1, 6),
+            NameRandom.GenerateName(),
+            SharedRandom.Next(1, 6),
             true,
             GenerateWeapons()
             )
-    
+
     {
         terror.Terrorists.Add(this);
     }
@@ -21,7 +22,7 @@ public class TerroristsRandomali : Terrorist
     private static List<WeaponBase> GenerateWeapons()
     {
         List<WeaponBase> list = new List<WeaponBase>();
-        for (int i = 0; i < _random.Next(1, 5); i++)
+        for (int i = 0; i < SharedRandom.Next(1, 5); i++)
         {
             list.Add(new WeaponsRandom());
         }

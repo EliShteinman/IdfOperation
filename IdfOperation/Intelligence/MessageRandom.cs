@@ -1,40 +1,42 @@
 ﻿using IdfOperation.Forces.Terror;
 using IdfOperation.Intelligence;
+using IdfOperation.Organization;
 
-namespace IdfOperation.Creators
+
+namespace IdfOperation.Intelligence
 {
     internal class MessageRandom : Message
     {
-        private static readonly Random _random = new Random();
+        private static readonly Random SharedRandom = new Random();
 
 
-        public MessageRandom(TerrorOperation terror)
+        public MessageRandom(TerrorOrg terrorOrg)
             : base(
-                GetTerrorist(terror),
+                GetTerrorist(terrorOrg),
                 GetZone(),
                 GetDateTime()
             )
         {
-            if (terror.Terrorists.Count == 0)
+            if (terrorOrg.Terrorists.Count == 0)
                 throw new ArgumentException("No terrorists found in the operation.");
         }
 
-        private static Terrorist GetTerrorist(TerrorOperation terror)
+        private static Terrorist GetTerrorist(TerrorOrg terrorOrg)
         {
-            return terror.Terrorists[_random.Next(terror.Terrorists.Count)];
+            return terrorOrg.Terrorists[SharedRandom.Next(terrorOrg.Terrorists.Count)];
         }
 
         private static string GetZone()
         {
             string[] zones = new[] { "At home", "By car", "On the street" };
-            return zones[_random.Next(zones.Length)];
+            return zones[SharedRandom.Next(zones.Length)];
         }
 
         private static DateTime GetDateTime()
         {
             DateTime start = new DateTime(2023, 1, 1);
             int range = (DateTime.Today - start).Days;
-            return start.AddDays(_random.Next(range));
+            return start.AddDays(SharedRandom.Next(range));
         }
     }
 }

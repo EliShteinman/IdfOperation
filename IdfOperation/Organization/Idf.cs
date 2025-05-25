@@ -1,9 +1,9 @@
 using IdfOperation.Forces;
 using IdfOperation.Forces.Idf;
 
-namespace IdfOperation;
+namespace IdfOperation.Organization;
 
-public class IdfOperation : Organization
+public class Idf : IOrganization
 {
     public string Name { get; set; }
     public DateTime Date { get; set; }

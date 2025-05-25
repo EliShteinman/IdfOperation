@@ -1,6 +1,6 @@
 namespace IdfOperation.Forces;
 public interface ICombatUnit
 {
-    string Name { get; set; }
+    string Name { get; }
 }
 

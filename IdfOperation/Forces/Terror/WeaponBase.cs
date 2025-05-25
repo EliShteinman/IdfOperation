@@ -1,6 +1,6 @@
 namespace IdfOperation.Forces.Terror;
 
-public abstract class WeaponBase : IWeapon
+public abstract class WeaponBase
 {
     public string Type { get; protected set; }
     public int Score { get; protected set; }
