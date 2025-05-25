@@ -16,9 +16,9 @@ class Program
         idf.Name = "idf";
         idf.Commander = new SoldierRandomli();
         idf.Date = DateTime.Now;
-        for (int i; i < ran.Next(5,11); i++)
+        for (int i = 0; i < ran.Next(5,10); i++)
         {
-
+            new TerroristRandomali(hamas);
         }
     }
 }
