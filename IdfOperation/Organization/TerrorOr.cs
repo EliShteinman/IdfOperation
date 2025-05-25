@@ -2,7 +2,7 @@
 using IdfOperation.Forces;
 
 namespace IdfOperation.Organization;
-public class Terror : Organization
+public class TerrorOr : Organization
 {
     public string Name { get; set; }
     public DateTime Date { get; set; }

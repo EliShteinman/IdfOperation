@@ -7,7 +7,7 @@ class Program
     static void Main()
     {
         Random ran = new Random();
-        Terror hamas = new Terror();
+        TerrorOr hamas = new TerrorOr();
         hamas.Name = "hamas";
         hamas.Commander = new TerroristRandomali(hamas);
         hamas.Date = DateTime.Now;

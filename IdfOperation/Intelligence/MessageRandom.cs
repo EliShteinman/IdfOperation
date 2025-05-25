@@ -3,27 +3,27 @@ using IdfOperation.Intelligence;
 using IdfOperation.Organization;
 
 
-namespace IdfOperation.Creators
+namespace IdfOperation.Intelligence
 {
     internal class MessageRandom : Message
     {
         private static readonly Random SharedRandom = new Random();
 
 
-        public MessageRandom(Terror terror)
+        public MessageRandom(TerrorOr terrorOr)
             : base(
-                GetTerrorist(terror),
+                GetTerrorist(terrorOr),
                 GetZone(),
                 GetDateTime()
             )
         {
-            if (terror.Terrorists.Count == 0)
+            if (terrorOr.Terrorists.Count == 0)
                 throw new ArgumentException("No terrorists found in the operation.");
         }
 
-        private static Terrorist GetTerrorist(Terror terror)
+        private static Terrorist GetTerrorist(TerrorOr terrorOr)
         {
-            return terror.Terrorists[SharedRandom.Next(terror.Terrorists.Count)];
+            return terrorOr.Terrorists[SharedRandom.Next(terrorOr.Terrorists.Count)];
         }
 
         private static string GetZone()

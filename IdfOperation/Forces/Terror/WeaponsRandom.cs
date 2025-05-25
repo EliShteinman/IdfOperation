@@ -1,5 +1,4 @@
-﻿using IdfOperation.Forces.Terror;
-namespace IdfOperation.Creators;
+﻿namespace IdfOperation.Forces.Terror;
 
 public class WeaponsRandom : WeaponBase
 {

@@ -1,6 +1,6 @@
 namespace IdfOperation.Forces.Terror;
 
-public abstract class Terrorist : ITerrorist
+public abstract class Terrorist : ISoldier
 {
     public string Name { get; set; }
     public int Rank { get; set; }

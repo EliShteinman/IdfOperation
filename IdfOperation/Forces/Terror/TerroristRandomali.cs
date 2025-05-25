@@ -1,15 +1,15 @@
 using IdfOperation.NameGenerator;
-using IdfOperation.Creators;
 using IdfOperation.Organization;
 namespace IdfOperation.Forces.Terror;
 
-// ;
+
 public class TerroristRandomali : Terrorist
 {
     private static readonly Random SharedRandom = new Random();
-    public TerroristRandomali(Organization.Terror terror)
+    private static readonly RandomName NameRandom = new RandomName();
+    public TerroristRandomali(TerrorOr terror)
         : base(
-            new RandomName().GenerateName(),
+            NameRandom.GenerateName(),
             SharedRandom.Next(1, 6),
             true,
             GenerateWeapons()
