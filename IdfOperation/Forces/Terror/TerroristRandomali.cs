@@ -1,4 +1,4 @@
-using IdfOperation.NameGenerator;
+﻿using IdfOperation.NameGenerator;
 using IdfOperation.Organization;
 namespace IdfOperation.Forces.Terror;
 
