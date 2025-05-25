@@ -11,13 +11,13 @@ using IdfOperation.Intelligence;
 
 namespace IdfOperation.Creators
 {
-    internal class RandomMessage : Message
+    internal class MessageRandom : Message
     {
         public ITerrorist terrorist;
         public string zone;
         public DateTime date;
         
-        public RandomMessage(HamasOperation hamas)
+        public MessageRandom(HamasOperation hamas)
         {
             this.terrorist = GetTerrorist(hamas);
             this.zone = GetZone();

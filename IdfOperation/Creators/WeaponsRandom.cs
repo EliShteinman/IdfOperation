@@ -1,10 +1,10 @@
 ﻿namespace IdfOperation.Creators;
 
-public class RandomWeapons : Weapons
+public class WeaponsRandom : Weapons
 {
     int Score { get; }
     string Type { get; }
-    public RandomWeapons()
+    public WeaponsRandom()
     {
         Random r = new Random();
         string[] weapons = ["knife", "gun", "M16", "AK47"];

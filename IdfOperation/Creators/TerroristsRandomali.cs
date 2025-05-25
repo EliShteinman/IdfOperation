@@ -19,7 +19,7 @@ public class TerroristsRandomali : ITerrorist
         this.Status = true;
         for (int i = 0; i < r.Next(1, 4); i++)
         {
-            this.Weapons.Add(new RandomWeapons());
+            this.Weapons.Add(new WeaponsRandom());
         }
         hamas.Terrorists.Add(this);
     }
