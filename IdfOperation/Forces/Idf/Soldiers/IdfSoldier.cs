@@ -2,12 +2,11 @@ namespace IdfOperation.Forces.Idf.Soldiers;
 
 public abstract class IdfSoldier : Soldier
 {
-    public string Name { get; set; }
     public string Rank { get; set; }
     public string Assignment { get; set; }
     
-    private static string[] Ranks = new string[]
-    {
+    protected static readonly string[] Ranks =
+    [
         "Pvt.",         // טוראי
         "Cpl.",         // רב״ט
         "Sgt.",         // סמל
@@ -18,10 +17,10 @@ public abstract class IdfSoldier : Soldier
         "Col.",         // אל״ם
         "Maj.Gen.",     // אלוף
         "Lt.Gen."       // רב־אלוף
-    };
+    ];
     
-    private static string[] Assignments = new string[]
-    {
+    protected static readonly string[] Assignments = 
+    [
         "Infantry",         // חיל רגלים
         "Intelligence",     // מודיעין
         "Engineering",      // חיל ההנדסה
@@ -32,7 +31,7 @@ public abstract class IdfSoldier : Soldier
         "Navy",             // חיל הים
         "Cyber",            // סייבר
         "Chief of Staff"    // רמטכ״ל (ראש המטה הכללי)
-    };
+    ];
 
     protected IdfSoldier(string name, string rank, string assignment)
     {
