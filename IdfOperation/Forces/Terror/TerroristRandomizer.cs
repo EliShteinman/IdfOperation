@@ -5,16 +5,14 @@ namespace IdfOperation.Forces.Terror;
 
 public class TerroristRandomizer : Terrorist
 {
-    public TerroristRandomizer(TerrorOrg terror)
+    public TerroristRandomizer()
         : base(
             RandomGenerators.NameRandom.GenerateName(),
             RandomGenerators.SharedRandom.Next(1, 6),
             true,
             GenerateWeapons()
             )
-
     {
-        terror.Terrorists.Add(this);
     }
 
     private static List<WeaponBase> GenerateWeapons()

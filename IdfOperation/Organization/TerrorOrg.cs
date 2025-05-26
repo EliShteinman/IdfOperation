@@ -2,10 +2,14 @@
 using IdfOperation.Forces;
 
 namespace IdfOperation.Organization;
-public class TerrorOrg : IOrganization
+
+public class TerrorOrg : Organization
 {
-    public string Name { get; set; }
-    public DateTime Date { get; set; }
-    public Soldier Commander { get; set; }
-    public List<Terrorist> Terrorists { get; set; } = new List<Terrorist>();
+    public List<Terrorist> Terrorists { get; set; }
+
+    public TerrorOrg(string name, Terrorist commander, DateTime date)
+        : base(name, date, commander)
+    {
+        this.Terrorists = new List<Terrorist>() { commander };
+    }
 }
