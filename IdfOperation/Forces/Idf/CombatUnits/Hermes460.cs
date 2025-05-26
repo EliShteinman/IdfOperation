@@ -1,6 +1,6 @@
 ﻿namespace IdfOperation.Forces.Idf.CombatUnits;
 
-    internal class Hermes_460z
+    internal class Hermes460 : Drone
     {
     }
 
