@@ -28,6 +28,7 @@ public abstract class IdfSoldier : Soldier
         "Logistics",        // לוגיסטיקה
         "Medical",          // רפואה / חיל רפואה
         "Air Force",        // חיל האוויר
+        "Pilot",            // טייס
         "Navy",             // חיל הים
         "Cyber",            // סייבר
         "Chief of Staff"    // רמטכ״ל (ראש המטה הכללי)

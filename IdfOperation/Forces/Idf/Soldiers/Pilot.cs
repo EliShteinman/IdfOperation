@@ -1,12 +1,13 @@
-using IdfOperation.NameGenerator;
+using IdfOperation.Utils;
 namespace IdfOperation.Forces.Idf.Soldiers;
 
 public class Pilot : IdfSoldier
 {
-    private static readonly RandomName NameRandom = new RandomName();
-    private static readonly Random SharedRandom = new Random();
-    public Pilot() 
-        : base()
+    public Pilot()
+        : base(
+            RandomGenerators.NameRandom.GenerateName(),
+            Ranks[RandomGenerators.SharedRandom.Next(4, 9)],
+            "Pilot")
     {
         
     }

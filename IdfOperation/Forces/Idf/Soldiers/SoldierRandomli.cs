@@ -1,17 +1,16 @@
-using IdfOperation.NameGenerator;
+using IdfOperation.Utils;
 namespace IdfOperation.Forces.Idf.Soldiers;
 
 public class SoldierRandomli : IdfSoldier
 {
-    private static readonly RandomName NameRandom = new RandomName();
-    private static readonly Random SharedRandom = new Random();
+
 
 
     public SoldierRandomli()
         : base(
-            NameRandom.GenerateName(),
-            Ranks[SharedRandom.Next(Ranks.Length)],
-            Assignments[SharedRandom.Next(Assignments.Length)])
+            RandomGenerators.NameRandom.GenerateName(),
+            Ranks[RandomGenerators.SharedRandom.Next(Ranks.Length)],
+            Assignments[RandomGenerators.SharedRandom.Next(Assignments.Length)])
     {
         
     }
