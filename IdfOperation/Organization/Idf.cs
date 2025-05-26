@@ -1,5 +1,5 @@
 using IdfOperation.Forces;
-using IdfOperation.Forces.Idf;
+using IdfOperation.Forces.Idf.CombatUnits;
 
 namespace IdfOperation.Organization;
 
@@ -7,6 +7,6 @@ public class Idf : IOrganization
 {
     public string Name { get; set; }
     public DateTime Date { get; set; }
-    public ISoldier Commander { get; set; }
+    public Soldier Commander { get; set; }
     private List<IStrikeUnit> Soldiers;
 }

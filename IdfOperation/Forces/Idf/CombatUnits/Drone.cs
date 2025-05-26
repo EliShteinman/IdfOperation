@@ -1,6 +1,6 @@
-namespace IdfOperation.Forces.Idf;
+namespace IdfOperation.Forces.Idf.CombatUnits;
 
-public class Drone : IStrikeUnit
+public abstract class Drone : IStrikeUnit
 {
     public string Name { get; set; }
     public double Fuel { get; set; }
@@ -8,7 +8,7 @@ public class Drone : IStrikeUnit
     public string TargetType { get; set; }
     public int StrikeCycleLimit { get; set; }
 
-    public bool Strike()
+    public override bool Strike()
     {
         return true;
     }
