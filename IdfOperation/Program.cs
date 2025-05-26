@@ -8,17 +8,13 @@ class Program
 {
     public static void Main()
     {
-        var hamas = new TerrorOrg();
-        hamas.Name = "hamas";
-        hamas.Commander = new TerroristRandomizer(hamas);
-        hamas.Date = DateTime.Now;
-        var idf = new Idf();
-        idf.Name = "idf";
-        idf.Commander = new ChiefOfStaff();
-        idf.Date = DateTime.Now;
+        var hamas = new TerrorOrg("hamas", new TerroristRandomizer(), DateTime.Now);
+        var idf = new Idf("idf", new ChiefOfStaff(), DateTime.Now);
         for (int i = 0; i < RandomGenerators.SharedRandom.Next(5, 10); i++)
         {
-            new TerroristRandomizer(hamas);
+            hamas.Terrorists.Add(new TerroristRandomizer());
         }
+        idf.IdfSoldiers.Add(new Pilot());
+
     }
 }

@@ -3,9 +3,6 @@ namespace IdfOperation.Forces.Idf.Soldiers;
 
 public class SoldierRandomized : IdfSoldier
 {
-
-
-
     public SoldierRandomized()
         : base(
             RandomGenerators.NameRandom.GenerateName(),
