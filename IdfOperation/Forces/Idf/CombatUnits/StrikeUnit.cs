@@ -7,7 +7,9 @@ public abstract class StrikeUnit : CombatUnit
     public string[] TargetType { get; protected set; }               // סוג המטרה (אנשים, מבנים וכו')
     public int StrikeCycleLimit { get; protected set; }            // כמות תקיפות אפשריות 
 
+
     protected StrikeUnit(string name, int ammunition, double fuel, string[] targetType, int strikeLimit)
+
     {
         base.Name = name;
         Ammunition = ammunition;
@@ -30,10 +32,9 @@ public abstract class StrikeUnit : CombatUnit
     {
         return HasAmmunition() && HasFuel() && CanOperate();
     }
+
     protected virtual bool HasAmmunition() => Ammunition > 0;
     protected virtual bool HasFuel() => Fuel > 0;
     protected virtual bool CanOperate() => StrikeCycleLimit > 0;
-
-
 
 }

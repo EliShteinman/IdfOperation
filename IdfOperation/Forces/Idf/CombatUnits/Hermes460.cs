@@ -1,5 +1,3 @@
-﻿using IdfOperation.Forces.Idf.Soldiers;
-
 namespace IdfOperation.Forces.Idf.CombatUnits;
 
 public abstract class Hermes460 : Drone

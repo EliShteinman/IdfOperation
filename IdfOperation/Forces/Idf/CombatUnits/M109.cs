@@ -1,4 +1,3 @@
-﻿using IdfOperation.Forces.Idf.Soldiers;
 
 namespace IdfOperation.Forces.Idf.CombatUnits;
 
