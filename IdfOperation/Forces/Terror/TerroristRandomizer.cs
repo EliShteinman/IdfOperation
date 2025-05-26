@@ -3,9 +3,9 @@ using IdfOperation.Utils;
 namespace IdfOperation.Forces.Terror;
 
 
-public class TerroristRandomali : Terrorist
+public class TerroristRandomizer : Terrorist
 {
-    public TerroristRandomali(TerrorOrg terror)
+    public TerroristRandomizer(TerrorOrg terror)
         : base(
             RandomGenerators.NameRandom.GenerateName(),
             RandomGenerators.SharedRandom.Next(1, 6),
