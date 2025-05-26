@@ -1,8 +1,8 @@
-﻿namespace IdfOperation.Forces.Terror;
+﻿using IdfOperation.Utils;
+namespace IdfOperation.Forces.Terror;
 
 public class WeaponsRandom : WeaponBase
 {
-    private static readonly Random SharedRandom = new Random();
     public WeaponsRandom() : base(GetRandomType())
     {
 
@@ -11,7 +11,7 @@ public class WeaponsRandom : WeaponBase
     private static string GetRandomType()
     {
         string[] weapons = new[] { "knife", "gun", "M16", "AK47" };
-        return weapons[SharedRandom.Next(weapons.Length)];
+        return weapons[RandomGenerators.SharedRandom.Next(weapons.Length)];
     }
 
     protected override int CalculateScore(string type)

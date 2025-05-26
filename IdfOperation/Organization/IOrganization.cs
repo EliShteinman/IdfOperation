@@ -6,7 +6,7 @@ public interface IOrganization
 {
     string Name { get; set; }
     DateTime Date { get; set; }
-    ISoldier Commander { get; set; }
+    Soldier Commander { get; set; }
 
 }
 

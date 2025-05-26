@@ -1,13 +1,12 @@
 ﻿using IdfOperation.Forces.Terror;
-using IdfOperation.Intelligence;
 using IdfOperation.Organization;
+using IdfOperation.Utils;
 
 
 namespace IdfOperation.Intelligence
 {
     internal class MessageRandom : Message
     {
-        private static readonly Random SharedRandom = new Random();
 
 
         public MessageRandom(TerrorOrg terrorOrg)
@@ -23,20 +22,20 @@ namespace IdfOperation.Intelligence
 
         private static Terrorist GetTerrorist(TerrorOrg terrorOrg)
         {
-            return terrorOrg.Terrorists[SharedRandom.Next(terrorOrg.Terrorists.Count)];
+            return terrorOrg.Terrorists[RandomGenerators.SharedRandom.Next(terrorOrg.Terrorists.Count)];
         }
 
         private static string GetZone()
         {
             string[] zones = new[] { "At home", "By car", "On the street" };
-            return zones[SharedRandom.Next(zones.Length)];
+            return zones[RandomGenerators.SharedRandom.Next(zones.Length)];
         }
 
         private static DateTime GetDateTime()
         {
             DateTime start = new DateTime(2023, 1, 1);
             int range = (DateTime.Today - start).Days;
-            return start.AddDays(SharedRandom.Next(range));
+            return start.AddDays(RandomGenerators.SharedRandom.Next(range));
         }
     }
 }
