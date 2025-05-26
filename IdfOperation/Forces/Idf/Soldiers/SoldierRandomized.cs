@@ -1,12 +1,12 @@
 using IdfOperation.Utils;
 namespace IdfOperation.Forces.Idf.Soldiers;
 
-public class SoldierRandomli : IdfSoldier
+public class SoldierRandomized : IdfSoldier
 {
 
 
 
-    public SoldierRandomli()
+    public SoldierRandomized()
         : base(
             RandomGenerators.NameRandom.GenerateName(),
             Ranks[RandomGenerators.SharedRandom.Next(Ranks.Length)],

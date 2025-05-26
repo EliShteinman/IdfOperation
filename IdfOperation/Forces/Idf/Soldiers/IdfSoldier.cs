@@ -2,9 +2,9 @@ namespace IdfOperation.Forces.Idf.Soldiers;
 
 public abstract class IdfSoldier : Soldier
 {
-    public string name { get; set; }
-    public string rank { get; set; }
-    public string assignment { get; set; }
+    public string Name { get; set; }
+    public string Rank { get; set; }
+    public string Assignment { get; set; }
     
     protected static string[] Ranks = new string[]
     {
@@ -36,8 +36,8 @@ public abstract class IdfSoldier : Soldier
 
     protected IdfSoldier(string name, string rank, string assignment)
     {
-        this.name = name;
-        this.rank = rank;
-        this.assignment = assignment;
+        this.Name = name;
+        this.Rank = rank;
+        this.Assignment = assignment;
     }
 }

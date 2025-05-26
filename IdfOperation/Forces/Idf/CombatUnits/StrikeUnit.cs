@@ -1,6 +1,6 @@
 namespace IdfOperation.Forces.Idf.CombatUnits;
 
-public abstract class IStrikeUnit : CombatUnit
+public abstract class StrikeUnit : CombatUnit
 {
     public string Name { get; protected set; }
 
