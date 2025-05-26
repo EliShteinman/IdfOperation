@@ -4,7 +4,7 @@ public abstract class IdfSoldier : Soldier
 {
     public string Rank { get; set; }
     public string Assignment { get; set; }
-    
+
     protected static readonly string[] Ranks =
     [
         "Pvt.",         // טוראי
@@ -18,8 +18,8 @@ public abstract class IdfSoldier : Soldier
         "Maj.Gen.",     // אלוף
         "Lt.Gen."       // רב־אלוף
     ];
-    
-    protected static readonly string[] Assignments = 
+
+    protected static readonly string[] Assignments =
     [
         "Infantry",         // חיל רגלים
         "Intelligence",     // מודיעין

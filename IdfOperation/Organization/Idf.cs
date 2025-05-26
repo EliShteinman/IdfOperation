@@ -8,5 +8,6 @@ public class Idf : IOrganization
     public string Name { get; set; }
     public DateTime Date { get; set; }
     public Soldier Commander { get; set; }
-    private List<StrikeUnit> Soldiers;
+
+    private List<StrikeUnit> Soldiers = new List<StrikeUnit>();
 }

@@ -11,6 +11,6 @@ public class Pilot : IdfSoldier
             Ranks[RandomGenerators.SharedRandom.Next(MinPilotRankIndex, MaxPilotRankIndexExclusive)],
             "Pilot")
     {
-        
+
     }
 }

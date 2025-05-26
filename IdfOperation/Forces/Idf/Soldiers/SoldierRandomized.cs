@@ -12,6 +12,6 @@ public class SoldierRandomized : IdfSoldier
             Ranks[RandomGenerators.SharedRandom.Next(Ranks.Length)],
             Assignments[RandomGenerators.SharedRandom.Next(Assignments.Length)])
     {
-        
+
     }
 }

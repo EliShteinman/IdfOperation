@@ -9,7 +9,7 @@ public class ChiefOfStaff : IdfSoldier
             "Chief of Staff"
             )
     {
-        
+
     }
 
 }
