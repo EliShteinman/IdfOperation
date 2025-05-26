@@ -2,7 +2,6 @@ namespace IdfOperation.Forces.Terror;
 
 public abstract class Terrorist : Soldier
 {
-    public string Name { get; set; }
     public int Rank { get; set; }
     public bool Status { get; set; }
     public List<WeaponBase> Weapons { get; protected set; }
