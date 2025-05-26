@@ -1,4 +1,5 @@
-﻿using IdfOperation.Forces.Idf.Soldiers;
+﻿using IdfOperation.Forces.Idf.CombatUnits;
+using IdfOperation.Forces.Idf.Soldiers;
 using IdfOperation.Forces.Terror;
 using IdfOperation.Organization;
 using IdfOperation.Utils;
@@ -14,7 +15,8 @@ class Program
         {
             hamas.Terrorists.Add(new TerroristRandomizer());
         }
-        idf.IdfSoldiers.Add(new Pilot());
-
+        idf.StrikeUnits.Add(new F16FullyLoaded());
+        idf.StrikeUnits.Add(new Hermes460FullyLoaded());
+        idf.StrikeUnits.Add(new M109FullLoaded());
     }
 }
