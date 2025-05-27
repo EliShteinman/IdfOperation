@@ -3,7 +3,6 @@ using IdfOperation.IdfOrganization.Commands.AirForce.Forces.F16;
 using IdfOperation.IdfOrganization.Commands.AirForce.Forces.Hermes460;
 using IdfOperation.IdfOrganization.Commands.GroundForces.Forces.M109;
 using IdfOperation.IdfOrganization.Commands.GroundForces.Soldiers;
-using IdfOperation.TerrorOrganization;
 using IdfOperation.TerrorOrganization.Hamas;
 using IdfOperation.TerrorOrganization.Hamas.Forces;
 using IdfOperation.Utils;
