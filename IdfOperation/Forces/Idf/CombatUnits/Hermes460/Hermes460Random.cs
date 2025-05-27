@@ -1,5 +1,5 @@
 using IdfOperation.Utils;
-namespace IdfOperation.Forces.Idf.CombatUnits;
+namespace IdfOperation.Forces.Idf.CombatUnits.Hermes460;
 
 public class Hermes460Random : Hermes460
 {

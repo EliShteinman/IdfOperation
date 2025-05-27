@@ -1,4 +1,4 @@
-﻿namespace IdfOperation.Forces.Idf.CombatUnits
+﻿namespace IdfOperation.Forces.Idf.CombatUnits.Hermes460
 {
     internal class Hermes460Manual : Hermes460
     {

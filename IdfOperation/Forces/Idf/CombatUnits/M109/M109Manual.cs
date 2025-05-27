@@ -1,4 +1,4 @@
-﻿namespace IdfOperation.Forces.Idf.CombatUnits
+﻿namespace IdfOperation.Forces.Idf.CombatUnits.M109
 {
     internal class M109Manual : M109
     {

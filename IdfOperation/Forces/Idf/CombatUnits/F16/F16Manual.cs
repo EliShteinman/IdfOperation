@@ -1,6 +1,6 @@
 ﻿using IdfOperation.Forces.Idf.Soldiers;
 
-namespace IdfOperation.Forces.Idf.CombatUnits
+namespace IdfOperation.Forces.Idf.CombatUnits.F16
 {
     internal class F16Manual : F16
     {

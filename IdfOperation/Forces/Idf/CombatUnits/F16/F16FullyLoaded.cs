@@ -1,7 +1,7 @@
 using IdfOperation.Forces.Idf.Soldiers;
 using IdfOperation.Utils;
 
-namespace IdfOperation.Forces.Idf.CombatUnits;
+namespace IdfOperation.Forces.Idf.CombatUnits.F16;
 
 public class F16FullyLoaded : F16
 {

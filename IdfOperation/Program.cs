@@ -1,4 +1,7 @@
 ﻿using IdfOperation.Forces.Idf.CombatUnits;
+using IdfOperation.Forces.Idf.CombatUnits.F16;
+using IdfOperation.Forces.Idf.CombatUnits.Hermes460;
+using IdfOperation.Forces.Idf.CombatUnits.M109;
 using IdfOperation.Forces.Idf.Soldiers;
 using IdfOperation.Forces.Terror;
 using IdfOperation.Organization;

@@ -1,5 +1,5 @@
 
-namespace IdfOperation.Forces.Idf.CombatUnits;
+namespace IdfOperation.Forces.Idf.CombatUnits.M109;
 
 public abstract class M109 : Artillery
 {

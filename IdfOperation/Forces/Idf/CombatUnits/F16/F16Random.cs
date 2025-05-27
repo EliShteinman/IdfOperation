@@ -1,7 +1,7 @@
 using IdfOperation.Utils;
 using IdfOperation.Forces.Idf.Soldiers;
 
-namespace IdfOperation.Forces.Idf.CombatUnits;
+namespace IdfOperation.Forces.Idf.CombatUnits.F16;
 
 public class F16Random : F16
 {

@@ -1,5 +1,5 @@
 using IdfOperation.Utils;
-namespace IdfOperation.Forces.Idf.CombatUnits;
+namespace IdfOperation.Forces.Idf.CombatUnits.M109;
 
 public class M109Random : M109
 {

@@ -1,4 +1,4 @@
-namespace IdfOperation.Forces.Idf.CombatUnits;
+namespace IdfOperation.Forces.Idf.CombatUnits.Hermes460;
 
 public abstract class Hermes460 : Drone
 {
