@@ -1,6 +1,4 @@
-﻿using IdfOperation.Interfaces;
-
-namespace IdfOperation.IdfOrganization.Commands.CombatUnits;
+﻿namespace IdfOperation.Interfaces;
 
 public abstract class StrikeUnit : CombatUnit
 {

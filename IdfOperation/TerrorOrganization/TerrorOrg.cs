@@ -3,13 +3,19 @@ using IdfOperation.TerrorOrganization.Terror;
 
 namespace IdfOperation.TerrorOrganization;
 
-public class TerrorOrg : Organization
+public class TerrorOrg : IOrganization
 {
+    public string Name { get; private set; }
+    public DateTime Date { get; private set; }
+    public Soldier Commander { get; private set; }
     public List<Terrorist> Terrorists { get; set; }
 
     public TerrorOrg(string name, Terrorist commander, DateTime date)
-        : base(name, date, commander)
     {
-        this.Terrorists = new List<Terrorist>() { commander };
+        Name = name;
+        Date = date;
+        Commander = commander;
+
+        Terrorists = new List<Terrorist>() { commander };
     }
 }

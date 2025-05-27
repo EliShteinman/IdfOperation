@@ -1,4 +1,4 @@
-﻿using IdfOperation.IdfOrganization.Commands.CombatUnits;
+﻿using IdfOperation.Interfaces;
 
 namespace IdfOperation.IdfOrganization.Commands.GroundForces.Forces;
 
