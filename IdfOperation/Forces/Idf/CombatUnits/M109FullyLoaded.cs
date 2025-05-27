@@ -1,9 +1,9 @@
 using IdfOperation.Utils;
 namespace IdfOperation.Forces.Idf.CombatUnits;
 
-public class M109FullLoaded : M109
+public class M109FullyLoaded : M109
 {
-    public M109FullLoaded()
+    public M109FullyLoaded()
         : base(
             RandomGenerators.Serial.GetNext("M109"),
             40,

@@ -17,6 +17,6 @@ class Program
         }
         idf.StrikeUnits.Add(new F16FullyLoaded());
         idf.StrikeUnits.Add(new Hermes460FullyLoaded());
-        idf.StrikeUnits.Add(new M109FullLoaded());
+        idf.StrikeUnits.Add(new M109FullyLoaded());
     }
 }

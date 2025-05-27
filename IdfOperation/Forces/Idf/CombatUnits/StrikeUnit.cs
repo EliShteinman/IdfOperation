@@ -4,17 +4,17 @@ public abstract class StrikeUnit : CombatUnit
 {
     public int Ammunition { get; protected set; }                 // כמות תחמושת
     public double Fuel { get; protected set; }                    // כמות דלק
-    public string[] TargetType { get; protected set; }               // סוג המטרה (אנשים, מבנים וכו')
+    public string[] TargetTypes { get; protected set; }               // סוג המטרה (אנשים, מבנים וכו')
     public int StrikeCycleLimit { get; protected set; }            // כמות תקיפות אפשריות 
 
 
-    protected StrikeUnit(string name, int ammunition, double fuel, string[] targetType, int strikeLimit)
+    protected StrikeUnit(string name, int ammunition, double fuel, string[] targetTypes, int strikeLimit)
 
     {
         base.Name = name;
         Ammunition = ammunition;
         Fuel = fuel;
-        TargetType = targetType;
+        TargetTypes = targetTypes;
         StrikeCycleLimit = strikeLimit;
     }
 
