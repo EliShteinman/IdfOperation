@@ -1,6 +1,6 @@
 ﻿using IdfOperation.Utils;
 
-namespace IdfOperation.TerrorOrganization.Terror;
+namespace IdfOperation.TerrorOrganization.Hamas.Forces;
 
 
 public class TerroristRandomizer : Terrorist

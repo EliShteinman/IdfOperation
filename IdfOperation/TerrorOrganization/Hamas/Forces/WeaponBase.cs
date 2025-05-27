@@ -1,4 +1,4 @@
-namespace IdfOperation.TerrorOrganization.Terror;
+namespace IdfOperation.TerrorOrganization.Hamas.Forces;
 
 public abstract class WeaponBase
 {

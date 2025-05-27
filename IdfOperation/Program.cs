@@ -4,7 +4,8 @@ using IdfOperation.IdfOrganization.Commands.AirForce.Forces.Hermes460;
 using IdfOperation.IdfOrganization.Commands.GroundForces.Forces.M109;
 using IdfOperation.IdfOrganization.Commands.GroundForces.Soldiers;
 using IdfOperation.TerrorOrganization;
-using IdfOperation.TerrorOrganization.Terror;
+using IdfOperation.TerrorOrganization.Hamas;
+using IdfOperation.TerrorOrganization.Hamas.Forces;
 using IdfOperation.Utils;
 
 namespace IdfOperation;
@@ -12,7 +13,7 @@ class Program
 {
     public static void Main()
     {
-        var hamas = new TerrorOrg("hamas", new TerroristRandomizer(), DateTime.Now.AddYears(-15));
+        var hamas = new Hamas("hamas", new TerroristRandomizer(), DateTime.Now.AddYears(-15));
         var idf = new Idf("idf", new ChiefOfStaff(), DateTime.Now.AddYears(-78));
         for (int i = 0; i < RandomGenerators.SharedRandom.Next(5, 10); i++)
         {

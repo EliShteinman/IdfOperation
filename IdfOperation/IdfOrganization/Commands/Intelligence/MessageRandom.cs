@@ -1,5 +1,6 @@
 ﻿using IdfOperation.TerrorOrganization;
-using IdfOperation.TerrorOrganization.Terror;
+using IdfOperation.TerrorOrganization.Hamas;
+using IdfOperation.TerrorOrganization.Hamas.Forces;
 using IdfOperation.Utils;
 
 namespace IdfOperation.IdfOrganization.Commands.Intelligence
@@ -8,20 +9,20 @@ namespace IdfOperation.IdfOrganization.Commands.Intelligence
     {
 
 
-        public MessageRandom(TerrorOrg terrorOrg)
+        public MessageRandom(Hamas hamas)
             : base(
-                GetTerrorist(terrorOrg),
+                GetTerrorist(hamas),
                 GetZone(),
                 GetDateTime()
             )
         {
-            if (terrorOrg.Terrorists.Count == 0)
+            if (hamas.Terrorists.Count == 0)
                 throw new ArgumentException("No terrorists found in the operation.");
         }
 
-        private static Terrorist GetTerrorist(TerrorOrg terrorOrg)
+        private static Terrorist GetTerrorist(Hamas hamas)
         {
-            return terrorOrg.Terrorists[RandomGenerators.SharedRandom.Next(terrorOrg.Terrorists.Count)];
+            return hamas.Terrorists[RandomGenerators.SharedRandom.Next(hamas.Terrorists.Count)];
         }
 
         private static string GetZone()

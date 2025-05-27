@@ -1,4 +1,4 @@
-using IdfOperation.TerrorOrganization.Terror;
+using IdfOperation.TerrorOrganization.Hamas.Forces;
 
 namespace IdfOperation.IdfOrganization.Commands.Intelligence;
 
