@@ -1,4 +1,6 @@
-﻿namespace IdfOperation.Idf.Commands.GroundForces.Forces;
+﻿using IdfOperation.Idf.Constants;
+
+namespace IdfOperation.Idf.Commands.GroundForces.Forces;
 
 public abstract class Artillery : StrikeUnit
 {

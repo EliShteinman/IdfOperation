@@ -1,4 +1,6 @@
-﻿namespace IdfOperation.Idf.Commands.AirForce.Forces.F16
+﻿using IdfOperation.Idf.Constants;
+
+namespace IdfOperation.Idf.Commands.AirForce.Forces.F16
 {
     internal class F16Manual : F16
     {

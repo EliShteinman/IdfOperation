@@ -1,4 +1,6 @@
-﻿namespace IdfOperation.Idf.Commands.AirForce.Forces;
+﻿using IdfOperation.Idf.Constants;
+
+namespace IdfOperation.Idf.Commands.AirForce.Forces;
 
 public abstract class Plane : StrikeUnit
 {

@@ -2,7 +2,7 @@
 
 namespace IdfOperation.Idf.Commands.Intelligence
 {
-    internal abstract class Message
+    public abstract class Message
     {
         public ITerrorist Terrorist { get; protected set; }
         public string Zone { get; protected set; }

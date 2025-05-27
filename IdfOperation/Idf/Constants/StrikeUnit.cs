@@ -1,6 +1,6 @@
 ﻿using IdfOperation.Interfaces;
 
-namespace IdfOperation.Idf;
+namespace IdfOperation.Idf.Constants;
 
 public abstract class StrikeUnit : IStrikeUnit
 {

@@ -1,6 +1,6 @@
 using IdfOperation.Interfaces;
-using IdfOperation.Idf.Constants;
-namespace IdfOperation.Idf;
+
+namespace IdfOperation.Idf.Constants;
 
 public abstract class IdfSoldier : ISoldier
 {
