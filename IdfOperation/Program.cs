@@ -1,8 +1,7 @@
-﻿using IdfOperation.IdfOrganization;
-using IdfOperation.IdfOrganization.Commands.AirForce.Forces.F16;
-using IdfOperation.IdfOrganization.Commands.AirForce.Forces.Hermes460;
-using IdfOperation.IdfOrganization.Commands.GroundForces.Forces.M109;
-using IdfOperation.IdfOrganization.Commands.Soldiers;
+﻿using IdfOperation.Idf.Commands.AirForce.Forces.F16;
+using IdfOperation.Idf.Commands.AirForce.Forces.Hermes460;
+using IdfOperation.Idf.Commands.GroundForces.Forces.M109;
+using IdfOperation.Idf.Commands.Soldiers;
 using IdfOperation.TerrorOrganization.Hamas;
 using IdfOperation.TerrorOrganization.Hamas.Forces;
 using IdfOperation.Utils;
@@ -13,7 +12,7 @@ class Program
     public static void Main()
     {
         var hamas = Hamas.CreateInstance("hamas", new TerroristRandomizer(), DateTime.Now.AddYears(-15));
-        var idf = Idf.CreateInstance("idf", new ChiefOfStaff(), DateTime.Now.AddYears(-78));
+        var idf = Idf.Idf.CreateInstance("idf", new ChiefOfStaff(), DateTime.Now.AddYears(-78));
         for (int i = 0; i < RandomGenerators.SharedRandom.Next(5, 10); i++)
         {
             hamas.Terrorists.Add(new TerroristRandomizer());
