@@ -1,6 +1,6 @@
 using IdfOperation.Utils;
 
-namespace IdfOperation.IdfOrganization.Commands.GroundForces.Soldiers;
+namespace IdfOperation.IdfOrganization.Commands.Soldiers;
 
 public class Pilot : IdfSoldier
 {

@@ -1,4 +1,4 @@
-namespace IdfOperation.IdfOrganization.Commands.GroundForces.Soldiers;
+namespace IdfOperation.IdfOrganization.Commands.Soldiers;
 
 public class ChiefOfStaff : IdfSoldier
 {

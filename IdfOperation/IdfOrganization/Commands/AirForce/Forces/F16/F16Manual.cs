@@ -1,6 +1,4 @@
-﻿using IdfOperation.IdfOrganization.Commands.GroundForces.Soldiers;
-
-namespace IdfOperation.IdfOrganization.Commands.AirForce.Forces.F16
+﻿namespace IdfOperation.IdfOrganization.Commands.AirForce.Forces.F16
 {
     internal class F16Manual : F16
     {

@@ -1,4 +1,4 @@
-using IdfOperation.IdfOrganization.Commands.GroundForces.Soldiers;
+using IdfOperation.IdfOrganization.Commands.Soldiers;
 using IdfOperation.Utils;
 
 namespace IdfOperation.IdfOrganization.Commands.AirForce.Forces.F16;

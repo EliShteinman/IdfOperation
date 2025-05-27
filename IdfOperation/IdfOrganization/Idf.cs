@@ -1,4 +1,3 @@
-using IdfOperation.IdfOrganization.Commands.GroundForces.Soldiers;
 using IdfOperation.Interfaces;
 
 namespace IdfOperation.IdfOrganization;

@@ -1,5 +1,4 @@
-﻿using IdfOperation.IdfOrganization.Commands.GroundForces.Soldiers;
-using IdfOperation.Interfaces;
+﻿using IdfOperation.Interfaces;
 
 namespace IdfOperation.IdfOrganization.Commands.AirForce.Forces;
 

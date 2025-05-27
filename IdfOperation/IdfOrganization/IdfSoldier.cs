@@ -1,6 +1,6 @@
 using IdfOperation.Interfaces;
 
-namespace IdfOperation.IdfOrganization.Commands.GroundForces.Soldiers;
+namespace IdfOperation.IdfOrganization;
 
 public abstract class IdfSoldier : ISoldier
 {
