@@ -26,11 +26,11 @@ public class Idf : IOrganization
 
     public static Idf CreateInstance(string name, IdfSoldier commander, DateTime date)
     {
-        
+
         if (_instance == null)
-            _instance = new Idf( name, commander, date);
+            _instance = new Idf(name, commander, date);
         return _instance;
-        
+
     }
     public static Idf Instance
     {
