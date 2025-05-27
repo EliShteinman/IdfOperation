@@ -1,17 +1,17 @@
 ﻿namespace IdfOperation.Interfaces;
 
-public abstract class StrikeUnit : CombatUnit
+public abstract class StrikeUnit : IStrikeUnit
 {
-    public int Ammunition { get; protected set; }                 // כמות תחמושת
-    public double Fuel { get; protected set; }                    // כמות דלק
-    public string[] TargetTypes { get; protected set; }               // סוג המטרה (אנשים, מבנים וכו')
-    public int StrikeCycleLimit { get; protected set; }            // כמות תקיפות אפשריות 
+    public string Name { get; protected set; }
+    public int Ammunition { get; protected set; }
+    public double Fuel { get; protected set; }
+    public string[] TargetTypes { get; protected set; }
+    public int StrikeCycleLimit { get; protected set; }
 
 
     protected StrikeUnit(string name, int ammunition, double fuel, string[] targetTypes, int strikeLimit)
-
     {
-        base.Name = name;
+        Name = name;
         Ammunition = ammunition;
         Fuel = fuel;
         TargetTypes = targetTypes;

@@ -1,7 +1,6 @@
 namespace IdfOperation.Interfaces;
-
-public interface IOrganization
+public interface INamedEntity
 {
     string Name { get; }
-    DateTime Date { get; }
 }
+

@@ -1,7 +1,6 @@
-﻿using IdfOperation.TerrorOrganization;
-using IdfOperation.TerrorOrganization.Hamas;
-using IdfOperation.TerrorOrganization.Hamas.Forces;
+﻿using IdfOperation.TerrorOrganization.Hamas;
 using IdfOperation.Utils;
+using IdfOperation.Interfaces;
 
 namespace IdfOperation.IdfOrganization.Commands.Intelligence
 {
@@ -20,7 +19,7 @@ namespace IdfOperation.IdfOrganization.Commands.Intelligence
                 throw new ArgumentException("No terrorists found in the operation.");
         }
 
-        private static Terrorist GetTerrorist(Hamas hamas)
+        private static ITerrorist GetTerrorist(Hamas hamas)
         {
             return hamas.Terrorists[RandomGenerators.SharedRandom.Next(hamas.Terrorists.Count)];
         }

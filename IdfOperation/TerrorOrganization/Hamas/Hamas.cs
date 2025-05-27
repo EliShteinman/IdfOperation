@@ -5,17 +5,39 @@ namespace IdfOperation.TerrorOrganization.Hamas;
 
 public class Hamas : IOrganization
 {
+    private static Hamas _instance;
     public string Name { get; private set; }
     public DateTime Date { get; private set; }
-    public Soldier Commander { get; private set; }
-    public List<Terrorist> Terrorists { get; set; }
+    public ITerrorist Commander { get; private set; }
+    public List<ITerrorist> Terrorists { get; set; }
 
-    public Hamas(string name, Terrorist commander, DateTime date)
+    private Hamas(string name, Terrorist commander, DateTime date)
     {
         Name = name;
         Date = date;
         Commander = commander;
 
-        Terrorists = new List<Terrorist>() { commander };
+        Terrorists = new List<ITerrorist> { commander };
+    }
+
+    public static Hamas CreateInstance(string name, Terrorist commander, DateTime date)
+    {
+        if (_instance == null)
+        {
+            _instance = new Hamas(name, commander, date);
+        }
+
+        return _instance;
+    }
+
+    public static Hamas Instance
+    {
+        get
+        {
+            if (_instance == null)
+                throw new InvalidOperationException("Must call CreateInstance(...) before accessing the instance.");
+
+            return _instance;
+        }
     }
 }

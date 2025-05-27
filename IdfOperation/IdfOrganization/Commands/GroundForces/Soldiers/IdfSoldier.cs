@@ -2,8 +2,9 @@ using IdfOperation.Interfaces;
 
 namespace IdfOperation.IdfOrganization.Commands.GroundForces.Soldiers;
 
-public abstract class IdfSoldier : Soldier
+public abstract class IdfSoldier : ISoldier
 {
+    public string Name { get; protected set; }
     public string Rank { get; set; }
     public string Assignment { get; set; }
 
@@ -37,8 +38,8 @@ public abstract class IdfSoldier : Soldier
 
     protected IdfSoldier(string name, string rank, string assignment)
     {
-        this.Name = name;
-        this.Rank = rank;
-        this.Assignment = assignment;
+        Name = name;
+        Rank = rank;
+        Assignment = assignment;
     }
 }
