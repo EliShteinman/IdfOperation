@@ -1,4 +1,5 @@
-﻿namespace IdfOperation.Idf.Commands.AirForce.Forces.F16;
+﻿using IdfOperation.Idf.Constants;
+namespace IdfOperation.Idf.Commands.AirForce.Forces.F16;
 
 public abstract class F16 : Plane
 {
@@ -62,7 +63,7 @@ public abstract class F16 : Plane
     }
     private static IdfSoldier ValidPilot(IdfSoldier pilot)
     {
-        if (pilot.Assignment != "pilot")
+        if (pilot.Assignment != Assignments.Pilot)
         {
             throw new ArgumentException("The soldier must be a pilot type.");
         }

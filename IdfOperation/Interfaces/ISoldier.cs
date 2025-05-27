@@ -1,7 +1,9 @@
+using IdfOperation.Idf.Constants;
+
 namespace IdfOperation.Interfaces;
 
 public interface ISoldier : INamedEntity
 {
-    string Rank { get; }
-    string Assignment { get; }
+    Ranks Rank { get; }
+    Assignments Assignment { get; }
 }
