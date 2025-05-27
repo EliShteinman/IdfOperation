@@ -1,10 +1,10 @@
-﻿using IdfOperation.Forces.Idf.CombatUnits;
-using IdfOperation.Forces.Idf.CombatUnits.F16;
-using IdfOperation.Forces.Idf.CombatUnits.Hermes460;
-using IdfOperation.Forces.Idf.CombatUnits.M109;
-using IdfOperation.Forces.Idf.Soldiers;
-using IdfOperation.Forces.Terror;
-using IdfOperation.Organization;
+﻿using IdfOperation.IdfOrganization;
+using IdfOperation.IdfOrganization.Commands.AirForce.Forces.F16;
+using IdfOperation.IdfOrganization.Commands.AirForce.Forces.Hermes460;
+using IdfOperation.IdfOrganization.Commands.GroundForces.Forces.M109;
+using IdfOperation.IdfOrganization.Commands.GroundForces.Soldiers;
+using IdfOperation.TerrorOrganization;
+using IdfOperation.TerrorOrganization.Terror;
 using IdfOperation.Utils;
 
 namespace IdfOperation;

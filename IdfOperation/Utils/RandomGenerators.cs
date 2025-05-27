@@ -1,4 +1,5 @@
-using IdfOperation.NameGenerator;
+using IdfOperation.Utils.NameGenerator;
+
 namespace IdfOperation.Utils;
 
 public static class RandomGenerators

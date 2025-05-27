@@ -1,0 +1,17 @@
+using IdfOperation.Interfaces;
+
+namespace IdfOperation.TerrorOrganization.Terror;
+
+public abstract class Terrorist : Soldier
+{
+    public int Rank { get; set; }
+    public bool Status { get; set; }
+    public List<WeaponBase> Weapons { get; protected set; }
+    protected Terrorist(string name, int rank, bool status, List<WeaponBase> weapons)
+    {
+        Name = name;
+        Rank = rank;
+        Status = status;
+        Weapons = weapons;
+    }
+}
