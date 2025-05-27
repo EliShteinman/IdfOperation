@@ -1,4 +1,6 @@
-﻿namespace IdfOperation.Interfaces;
+﻿using IdfOperation.Interfaces;
+
+namespace IdfOperation.IdfOrganization;
 
 public abstract class StrikeUnit : IStrikeUnit
 {
