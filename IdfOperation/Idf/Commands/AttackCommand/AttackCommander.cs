@@ -4,8 +4,16 @@ using IdfOperation.Interfaces;
 
 namespace IdfOperation.Idf.Commands.AttackCommand;
 
+/// <summary>
+/// מחלקה סטטית האחראית על ניהול התקיפות בצה"ל
+/// </summary>
 public static class AttackCommander
 {
+    /// <summary>
+    /// מבצע תקיפה על טרוריסט בהתבסס על הודעת מודיעין
+    /// </summary>
+    /// <param name="message">הודעת המודיעין המכילה מידע על הטרוריסט והאזור</param>
+    /// <returns>אמת אם התקיפה הצליחה, אחרת שקר</returns>
     public static bool Attack(Message message)
     {
         ITerrorist terrorist = message.Terrorist;
@@ -23,8 +31,13 @@ public static class AttackCommander
         }
 
         return attack;
-
     }
+
+    /// <summary>
+    /// מוצא יחידת תקיפה מתאימה לאזור המטרה
+    /// </summary>
+    /// <param name="zone">אזור המטרה</param>
+    /// <returns>טופל המכיל אמת אם נמצאה יחידה מתאימה ויחידת התקיפה שנמצאה</returns>
     public static (bool,StrikeUnit?) FindUnit(string zone)
     {
         StrikeUnit selectedUnit = null;
@@ -33,7 +46,6 @@ public static class AttackCommander
         {
             selectedUnit = StrikeAssignmentAnalyzer.GetFirstAvailableUnitForStrike(zone);
             return (true, selectedUnit);
-            
         }
         catch (Exception e)
         {
