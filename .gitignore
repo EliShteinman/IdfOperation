@@ -6,4 +6,4 @@ riderModule.iml
 .vs/
 .idea/
 *.DotSettings.user
-
+/RequirementsDocs/
