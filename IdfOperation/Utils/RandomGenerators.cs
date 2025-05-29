@@ -8,12 +8,12 @@ namespace IdfOperation.Utils;
 public static class RandomGenerators
 {
     /// <summary>
-    /// מופע אקראי משותף לשימוש בכל המערכת
+    /// מחולל מספרים ותווים אקראיים לשימוש משותף בכלל המערכת
     /// </summary>
     public static readonly Random SharedRandom = new Random();
 
     /// <summary>
-    /// גנרטור שמות אקראיים
+    /// גנרטור שמות מלאים (פרטי, אמצעי, משפחה) מתוך קובץ שמות שהוגדר מראש
     /// </summary>
     public static readonly RandomName NameRandom = new RandomName();
 

@@ -8,50 +8,50 @@ public enum Ranks
     /// <summary>
     /// טוראי
     /// </summary>
-    Pvt,        // טוראי
+    Pvt,
 
     /// <summary>
     /// רב״ט
     /// </summary>
-    Cpl,        // רב״ט
+    Cpl,
 
     /// <summary>
     /// סמל
     /// </summary>
-    Sgt,        // סמל
+    Sgt,
 
     /// <summary>
     /// סמ״ר
     /// </summary>
-    SSgt,       // סמ״ר
+    SSgt,
 
     /// <summary>
     /// סרן
     /// </summary>
-    Capt,       // סרן
+    Capt,
 
     /// <summary>
     /// רס״ן
     /// </summary>
-    Maj,        // רס״ן
+    Maj,
 
     /// <summary>
     /// סא״ל
     /// </summary>
-    LtCol,      // סא״ל
+    LtCol,
 
     /// <summary>
     /// אל״ם
     /// </summary>
-    Col,        // אל״ם
+    Col,
 
     /// <summary>
     /// אלוף
     /// </summary>
-    MajGen,     // אלוף
+    MajGen,
 
     /// <summary>
     /// רב־אלוף
     /// </summary>
-    LtGen       // רב־אלוף
+    LtGen
 }

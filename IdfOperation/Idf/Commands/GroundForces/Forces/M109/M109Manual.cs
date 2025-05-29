@@ -1,12 +1,12 @@
 ﻿namespace IdfOperation.Idf.Commands.GroundForces.Forces.M109
 {
     /// <summary>
-    /// מחלקה המייצגת תותח M109 במצב הפעלה ידני
+    /// מחלקה המייצגת תותח M109 במצב ייצור ידני
     /// </summary>
     internal class M109Manual : M109
     {
         /// <summary>
-        /// יוצר תותח M109 חדש במצב הפעלה ידני
+        /// יוצר תותח M109 חדש במצב ייצור ידני
         /// </summary>
         /// <param name="name">שם התותח</param>
         /// <param name="ammunition">כמות תחמושת התחלתית (0-40)</param>

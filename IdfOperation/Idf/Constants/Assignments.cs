@@ -8,50 +8,50 @@ public enum Assignments
     /// <summary>
     /// חיל רגלים
     /// </summary>
-    Infantry,        // חיל רגלים
+    Infantry,
 
     /// <summary>
     /// מודיעין
     /// </summary>
-    Intelligence,    // מודיעין
+    Intelligence,
 
     /// <summary>
     /// חיל ההנדסה
     /// </summary>
-    Engineering,     // חיל ההנדסה
+    Engineering,
 
     /// <summary>
     /// לוגיסטיקה
     /// </summary>
-    Logistics,       // לוגיסטיקה
+    Logistics,
 
     /// <summary>
     /// רפואה
     /// </summary>
-    Medical,         // רפואה
+    Medical,
 
     /// <summary>
     /// חיל האוויר
     /// </summary>
-    AirForce,        // חיל האוויר
+    AirForce,
 
     /// <summary>
     /// טייס
     /// </summary>
-    Pilot,           // טייס
+    Pilot,
 
     /// <summary>
     /// חיל הים
     /// </summary>
-    Navy,            // חיל הים
+    Navy,
 
     /// <summary>
     /// סייבר
     /// </summary>
-    Cyber,           // סייבר
+    Cyber,
 
     /// <summary>
     /// רמטכ״ל
     /// </summary>
-    ChiefOfStaff     // רמטכ״ל
+    ChiefOfStaff
 }

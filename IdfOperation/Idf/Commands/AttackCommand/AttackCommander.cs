@@ -38,7 +38,7 @@ public static class AttackCommander
     /// </summary>
     /// <param name="zone">אזור המטרה</param>
     /// <returns>טופל המכיל אמת אם נמצאה יחידה מתאימה ויחידת התקיפה שנמצאה</returns>
-    public static (bool,StrikeUnit?) FindUnit(string zone)
+    public static (bool, StrikeUnit?) FindUnit(string zone)
     {
         StrikeUnit selectedUnit = null;
 

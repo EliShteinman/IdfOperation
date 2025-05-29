@@ -1,12 +1,12 @@
 ﻿namespace IdfOperation.Idf.Commands.AirForce.Forces.Hermes460
 {
     /// <summary>
-    /// מחלקה המייצגת כטב"ם הרמס 460 במצב הפעלה ידני
+    /// מחלקה המייצגת כטב"ם הרמס 460 במצב ייצור ידני
     /// </summary>
     internal class Hermes460Manual : Hermes460
     {
         /// <summary>
-        /// יוצר כטב"ם הרמס 460 חדש במצב הפעלה ידני
+        /// יוצר כטב"ם הרמס 460 חדש במצב ייצור ידני
         /// </summary>
         /// <param name="name">שם הכטב"ם</param>
         /// <param name="ammunition">כמות תחמושת התחלתית (0-3)</param>

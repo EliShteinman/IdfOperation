@@ -29,23 +29,39 @@ public static class StrikeUnitStatusService
                $"דלק: {unit.Fuel}\n" +
                $"מחזורי תקיפה נותרו: {unit.StrikeCycleLimit}";
     }
-
+    /// <summary>
+    /// מחזיר את כמות התחמושת של יחידת התקיפה
+    /// </summary>
+    /// <param name="unit">יחידת התקיפה</param>
+    /// <returns>כמות התחמושת</returns>
     private static Idf idfInstance = Idf.Instance;
     private static int GetAmmunitionStatus(StrikeUnit unit)
     {
         return unit.Ammunition;
     }
-
+    /// <summary>
+    /// מחזיר את כמות התחמושת של יחידת התקיפה
+    /// </summary>
+    /// <param name="unit">יחידת התקיפה</param>
+    /// <returns>כמות התחמושת</returns>
     private static double GetFuelStatus(StrikeUnit unit)
     {
         return unit.Fuel;
     }
-
+    /// <summary>
+    /// מחזיר את כמות התחמושת של יחידת התקיפה
+    /// </summary>
+    /// <param name="unit">יחידת התקיפה</param>
+    /// <returns>כמות התחמושת</returns>
     private static int GetStrikeCycleLimit(StrikeUnit unit)
     {
         return unit.StrikeCycleLimit;
     }
-
+    /// <summary>
+    /// מחזיר את כמות התחמושת של יחידת התקיפה
+    /// </summary>
+    /// <param name="unit">יחידת התקיפה</param>
+    /// <returns>כמות התחמושת</returns>
     public static Dictionary<string, Dictionary<string, string>> GenerateFullUnitsStatusReportAsDictionary()
     {
         var reportData = new Dictionary<string, Dictionary<string, string>>();

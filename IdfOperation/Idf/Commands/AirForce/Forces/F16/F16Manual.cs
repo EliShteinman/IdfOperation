@@ -3,12 +3,12 @@
 namespace IdfOperation.Idf.Commands.AirForce.Forces.F16
 {
     /// <summary>
-    /// מחלקה המייצגת מטוס F16 במצב הפעלה ידני
+    /// מחלקה המייצגת מטוס F16 במצב ייצור ידני
     /// </summary>
     internal class F16Manual : F16
     {
         /// <summary>
-        /// יוצר מטוס F16 חדש במצב הפעלה ידני
+        /// יוצר מטוס F16 חדש במצב ייצור ידני
         /// </summary>
         /// <param name="name">שם המטוס</param>
         /// <param name="ammunition">כמות תחמושת התחלתית (0-8)</param>
