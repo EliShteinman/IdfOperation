@@ -5,7 +5,7 @@ namespace IdfOperation.Idf.Commands.GroundForces.Forces;
 /// <summary>
 /// מחלקה בסיסית המייצגת תותח
 /// </summary>
-public abstract class Artillery : StrikeUnit
+public abstract class Artillery : StrikeUnit1
 {
     /// <summary>
     /// יוצר תותח חדש

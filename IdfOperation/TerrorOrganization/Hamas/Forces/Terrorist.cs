@@ -1,4 +1,5 @@
 using IdfOperation.Interfaces;
+using IdfOperation.Lite.Domain.Contracts;
 
 namespace IdfOperation.TerrorOrganization.Hamas.Forces;
 

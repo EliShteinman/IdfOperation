@@ -1,5 +1,6 @@
 using IdfOperation.Idf.Constants;
 using IdfOperation.Interfaces;
+using IdfOperation.Lite.Domain.Contracts;
 
 namespace IdfOperation.Idf;
 
@@ -28,7 +29,7 @@ public class Idf : IOrganization
     /// <summary>
     /// רשימת יחידות התקיפה בצה"ל
     /// </summary>
-    public List<StrikeUnit> StrikeUnits { get; set; }
+    public List<StrikeUnit1> StrikeUnits { get; set; }
 
     /// <summary>
     /// רשימת החיילים בצה"ל
@@ -47,7 +48,7 @@ public class Idf : IOrganization
         Date = date;
         Commander = commander;
 
-        StrikeUnits = new List<StrikeUnit>();
+        StrikeUnits = new List<StrikeUnit1>();
         IdfSoldiers = new List<IdfSoldier>() { commander };
     }
 

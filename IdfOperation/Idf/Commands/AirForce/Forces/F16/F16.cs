@@ -1,4 +1,6 @@
 ﻿using IdfOperation.Idf.Constants;
+using IdfOperation.Lite.Domain.Enum;
+
 namespace IdfOperation.Idf.Commands.AirForce.Forces.F16;
 
 /// <summary>

@@ -1,11 +1,12 @@
 ﻿using IdfOperation.Interfaces;
+using IdfOperation.Lite.Domain.Contracts;
 
 namespace IdfOperation.Idf.Constants;
 
 /// <summary>
 /// מחלקה בסיסית המייצגת יחידת תקיפה בצה"ל
 /// </summary>
-public abstract class StrikeUnit : IStrikeUnit
+public abstract class StrikeUnit1 : IStrikeUnit
 {
     /// <summary>
     /// שם היחידה
@@ -40,7 +41,7 @@ public abstract class StrikeUnit : IStrikeUnit
     /// <param name="fuel">כמות דלק התחלתית</param>
     /// <param name="targetTypes">סוגי מטרות</param>
     /// <param name="strikeLimit">מספר תקיפות מקסימלי במחזור</param>
-    protected StrikeUnit(string name, int ammunition, double fuel, string[] targetTypes, int strikeLimit)
+    protected StrikeUnit1(string name, int ammunition, double fuel, string[] targetTypes, int strikeLimit)
     {
         Name = name;
         Ammunition = ammunition;

@@ -1,5 +1,6 @@
 using IdfOperation.Utils;
 using IdfOperation.Idf.Constants;
+using IdfOperation.Lite.Domain.Enum;
 
 namespace IdfOperation.Idf.Commands.Soldiers;
 

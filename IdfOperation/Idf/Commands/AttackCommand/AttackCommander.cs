@@ -1,6 +1,7 @@
 using IdfOperation.Idf.Commands.Intelligence;
 using IdfOperation.Idf.Constants;
 using IdfOperation.Interfaces;
+using IdfOperation.Lite.Domain.Contracts;
 
 namespace IdfOperation.Idf.Commands.AttackCommand;
 
@@ -18,7 +19,7 @@ public static class AttackCommander
     {
         ITerrorist terrorist = message.Terrorist;
         string zone = message.Zone;
-        (bool success, StrikeUnit? selectedUnit) result = FindUnit(zone);
+        (bool success, StrikeUnit1? selectedUnit) result = FindUnit(zone);
         if (!result.success)
         {
             return false;
@@ -38,14 +39,14 @@ public static class AttackCommander
     /// </summary>
     /// <param name="zone">אזור המטרה</param>
     /// <returns>טופל המכיל אמת אם נמצאה יחידה מתאימה ויחידת התקיפה שנמצאה</returns>
-    public static (bool, StrikeUnit?) FindUnit(string zone)
+    public static (bool, StrikeUnit1?) FindUnit(string zone)
     {
-        StrikeUnit selectedUnit = null;
+        StrikeUnit1 selectedUnit1 = null;
 
         try
         {
-            selectedUnit = StrikeAssignmentAnalyzer.GetFirstAvailableUnitForStrike(zone);
-            return (true, selectedUnit);
+            selectedUnit1 = StrikeAssignmentAnalyzer.GetFirstAvailableUnitForStrike(zone);
+            return (true, selectedUnit1);
         }
         catch (Exception e)
         {

@@ -5,7 +5,7 @@ namespace IdfOperation.Idf.Commands.AirForce.Forces;
 /// <summary>
 /// מחלקה בסיסית המייצגת כטב"ם
 /// </summary>
-public abstract class Drone : StrikeUnit
+public abstract class Drone : StrikeUnit1
 {
     /// <summary>
     /// יוצר כטב"ם חדש

@@ -12,7 +12,7 @@ public static class StrikeUnitStatusService
     /// מחזיר את כל יחידות התקיפה בצה"ל
     /// </summary>
     /// <returns>רשימת כל יחידות התקיפה</returns>
-    public static List<StrikeUnit> GetAllStrikeUnits()
+    public static List<StrikeUnit1> GetAllStrikeUnits()
     {
         return Idf.Instance.StrikeUnits;
     }
@@ -20,14 +20,14 @@ public static class StrikeUnitStatusService
     /// <summary>
     /// מחזיר דוח סטטוס מפורט על יחידת תקיפה
     /// </summary>
-    /// <param name="unit">יחידת התקיפה</param>
+    /// <param name="unit1">יחידת התקיפה</param>
     /// <returns>מחרוזת המכילה את פרטי הסטטוס של היחידה</returns>
-    public static string GetUnitStatusReport(StrikeUnit unit)
+    public static string GetUnitStatusReport(StrikeUnit1 unit1)
     {
-        return $"יחידה: {unit.Name}\n" +
-               $"תחמושת: {unit.Ammunition}\n" +
-               $"דלק: {unit.Fuel}\n" +
-               $"מחזורי תקיפה נותרו: {unit.StrikeCycleLimit}";
+        return $"יחידה: {unit1.Name}\n" +
+               $"תחמושת: {unit1.Ammunition}\n" +
+               $"דלק: {unit1.Fuel}\n" +
+               $"מחזורי תקיפה נותרו: {unit1.StrikeCycleLimit}";
     }
 
     /// <summary>
@@ -38,31 +38,31 @@ public static class StrikeUnitStatusService
     /// <summary>
     /// מחזיר את כמות התחמושת של יחידת התקיפה
     /// </summary>
-    /// <param name="unit">יחידת התקיפה</param>
+    /// <param name="unit1">יחידת התקיפה</param>
     /// <returns>כמות התחמושת</returns>
-    private static int GetAmmunitionStatus(StrikeUnit unit)
+    private static int GetAmmunitionStatus(StrikeUnit1 unit1)
     {
-        return unit.Ammunition;
+        return unit1.Ammunition;
     }
 
     /// <summary>
     /// מחזיר את כמות הדלק של יחידת התקיפה
     /// </summary>
-    /// <param name="unit">יחידת התקיפה</param>
+    /// <param name="unit1">יחידת התקיפה</param>
     /// <returns>כמות הדלק</returns>
-    private static double GetFuelStatus(StrikeUnit unit)
+    private static double GetFuelStatus(StrikeUnit1 unit1)
     {
-        return unit.Fuel;
+        return unit1.Fuel;
     }
 
     /// <summary>
     /// מחזיר את כמות מחזורי התקיפה של יחידת התקיפה
     /// </summary>
-    /// <param name="unit">יחידת התקיפה</param>
+    /// <param name="unit1">יחידת התקיפה</param>
     /// <returns>מספר מחזורי התקיפה שנותרו</returns>
-    private static int GetStrikeCycleLimit(StrikeUnit unit)
+    private static int GetStrikeCycleLimit(StrikeUnit1 unit1)
     {
-        return unit.StrikeCycleLimit;
+        return unit1.StrikeCycleLimit;
     }
 
     /// <summary>

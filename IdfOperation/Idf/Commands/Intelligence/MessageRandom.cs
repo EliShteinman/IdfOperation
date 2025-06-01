@@ -1,6 +1,7 @@
 ﻿using IdfOperation.TerrorOrganization.Hamas;
 using IdfOperation.Utils;
 using IdfOperation.Interfaces;
+using IdfOperation.Lite.Domain.Contracts;
 
 namespace IdfOperation.Idf.Commands.Intelligence;
 

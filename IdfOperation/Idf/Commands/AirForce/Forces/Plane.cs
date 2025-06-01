@@ -5,7 +5,7 @@ namespace IdfOperation.Idf.Commands.AirForce.Forces;
 /// <summary>
 /// מחלקה בסיסית המייצגת מטוס
 /// </summary>
-public abstract class Plane : StrikeUnit
+public abstract class Plane : StrikeUnit1
 {
     /// <summary>
     /// הטייס המפעיל את המטוס
