@@ -1,0 +1,48 @@
+using Lite.Domain.Validation;
+using Lite.Domain.Contracts;
+namespace Lite.Domain.Forces.Idf;
+
+public class F16 : Plane
+{
+    public F16(string name, int ammunition, double fuel, string[] targetTypes, int strikeLimit, ISoldier pilot)
+        : base(name, 
+            ValidAmmuition(ammunition), 
+            ValidFuel(fuel), 
+            ValidTargets(targetTypes), 
+            ValidStrikeLimit(strikeLimit), 
+            pilot)
+    {
+        
+    }
+    private static int ValidAmmuition(int ammo)
+    {
+        const int maxAmmo = 8;
+        if (ammo > maxAmmo)
+            throw new ArgumentException($"F16 cannot hold more than {maxAmmo} rounds");
+        return ammo;
+    }
+    private static double ValidFuel(double fuel)
+    {
+        return fuel;
+    }
+    private static int ValidStrikeLimit(int strikeLimit)
+    {
+        return strikeLimit;
+    }
+    private static readonly string[] AllowedTargets =  ["Buildings"];
+    private static string[] ValidTargets(string[] targetTypes)
+    {
+        TargetValidation.EnsureExactMatch(targetTypes, AllowedTargets, "F16");
+        return targetTypes;
+    }
+    
+    public override bool IsAvailableForStrike()
+    {
+        return true;
+    }
+
+    protected override void ExecuteStrike()
+    {
+        
+    }
+}
