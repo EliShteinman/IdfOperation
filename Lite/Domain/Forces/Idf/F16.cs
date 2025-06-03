@@ -4,15 +4,15 @@ namespace Lite.Domain.Forces.Idf;
 
 public class F16 : Plane
 {
-    public F16(string name, int ammunition, double fuel, string[] targetTypes, int strikeLimit, ISoldier pilot)
-        : base(name, 
-            ValidAmmuition(ammunition), 
-            ValidFuel(fuel), 
-            ValidTargets(targetTypes), 
-            ValidStrikeLimit(strikeLimit), 
+    public F16(string name, int ammunition, double fuel, int strikeLimit, string[] targetTypes, ISoldier pilot)
+        : base(name,
+            ValidAmmuition(ammunition),
+            ValidFuel(fuel),
+            ValidStrikeLimit(strikeLimit),
+            ValidTargets(targetTypes),
             pilot)
     {
-        
+
     }
     private static int ValidAmmuition(int ammo)
     {
@@ -29,20 +29,22 @@ public class F16 : Plane
     {
         return strikeLimit;
     }
-    private static readonly string[] AllowedTargets =  ["Buildings"];
+    private static readonly string[] AllowedTargets = ["Buildings"];
     private static string[] ValidTargets(string[] targetTypes)
     {
         TargetValidation.EnsureExactMatch(targetTypes, AllowedTargets, "F16");
         return targetTypes;
     }
-    
+
     public override bool IsAvailableForStrike()
     {
-        return true;
+        return Ammunition > 0 && Fuel > 0 && StrikeCycleLimit > 0;
     }
 
     protected override void ExecuteStrike()
     {
-        
+        Ammunition--;
+        Fuel--;
+        StrikeCycleLimit--;
     }
 }

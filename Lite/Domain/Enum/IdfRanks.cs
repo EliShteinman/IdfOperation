@@ -1,6 +1,6 @@
 namespace Lite.Domain.Enum;
 
-public enum Ranks
+public enum IdfRanks
 {
     Pvt,
     Cpl,

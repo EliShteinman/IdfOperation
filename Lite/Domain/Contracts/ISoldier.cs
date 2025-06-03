@@ -4,7 +4,7 @@ namespace Lite.Domain.Contracts;
 
 public interface ISoldier : INamedEntity
 {
-    Ranks Rank { get; }
+    IdfRanks IdfRank { get; }
 
     Assignments Assignment { get; }
 }

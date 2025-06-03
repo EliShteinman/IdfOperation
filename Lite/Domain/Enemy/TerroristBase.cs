@@ -14,9 +14,9 @@ public abstract class TerroristBase : ITerrorist
         if (string.IsNullOrWhiteSpace(name))
             throw new ArgumentException("Name required");
         if (rank <= 0)
-            throw new ArgumentException("Rank must be positive");
+            throw new ArgumentException("TerroristRank must be positive");
         if (rank > 5)
-            throw new ArgumentException("Rank must be between 1 and 5.");
+            throw new ArgumentException("TerroristRank must be between 1 and 5.");
         if (weapons == null || !weapons.Any())
             throw new ArgumentException("Terrorist must have at least one weapon");
         Name = name;

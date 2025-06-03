@@ -11,10 +11,10 @@ public abstract class StrikeUnit : IStrikeUnit
     public int StrikeCycleLimit { get; protected set; }
 
     protected StrikeUnit(string name,
-        string[] targetTypes,
         int ammunition,
         double fuel,
-        int strikeLimit)
+        int strikeLimit,
+        string[] targetTypes)
     {
         if (string.IsNullOrWhiteSpace(name)) throw new ArgumentException("Name required");
         if (targetTypes == null || targetTypes.Length == 0)
