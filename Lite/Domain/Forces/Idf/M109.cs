@@ -5,10 +5,10 @@ public class M109 : Artillery
 {
     public M109(string name, int ammunition, double fuel, int strikeLimit, string[] targetTypes)
         : base(
-            name, 
+            name,
             ValidAmmuition(ammunition),
         ValidFuel(fuel),
-        ValidStrikeLimit(strikeLimit), 
+        ValidStrikeLimit(strikeLimit),
             ValidTargets(targetTypes))
     {
 

@@ -10,7 +10,7 @@ public class Hermes460 : Drone
             ValidStrikeLimit(strikeLimit),
             ValidTargets(targetTypes))
     {
-        
+
     }
     private static int ValidAmmuition(int ammo)
     {
