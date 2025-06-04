@@ -1,23 +1,22 @@
 using Lite.Domain.Validation;
 namespace Lite.Domain.Forces.Idf;
 
-public class M109 : Artillery
+public class Hermes460 : Drone
 {
-    public M109(string name, int ammunition, double fuel, int strikeLimit, string[] targetTypes)
-        : base(
-            name, 
+    public Hermes460(string name, int ammunition, double fuel, int strikeLimit, string[] targetTypes)
+        : base(name,
             ValidAmmuition(ammunition),
-        ValidFuel(fuel),
-        ValidStrikeLimit(strikeLimit), 
+            ValidFuel(fuel),
+            ValidStrikeLimit(strikeLimit),
             ValidTargets(targetTypes))
     {
-
+        
     }
     private static int ValidAmmuition(int ammo)
     {
         const int maxAmmo = 40;
         if (ammo > maxAmmo)
-            throw new ArgumentException($"M109 cannot hold more than {maxAmmo} rounds");
+            throw new ArgumentException($"Hermes460 cannot hold more than {maxAmmo} rounds");
         return ammo;
     }
     private static double ValidFuel(double fuel)
