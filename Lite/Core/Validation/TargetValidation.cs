@@ -3,7 +3,7 @@ namespace Lite.Core.Validation;
 
 public static class TargetValidation
 {
-    public static void EnsureExactMatch(KnownLocationType[] actual, KnownLocationType[] allowed, string unitName)
+    public static void EnsureExactMatch(LocationType[] actual, LocationType[] allowed, string unitName)
     {
         if (actual == null || actual.Length == 0)
             throw new ArgumentException($"{unitName} must have at least one target");

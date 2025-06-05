@@ -4,49 +4,35 @@ namespace Lite.Core.Forces.Idf;
 
 public class M109 : Artillery
 {
-    private static readonly KnownLocationType[] AllowedTargets = [KnownLocationType.OpenTerrain];
+    private static readonly LocationType[] AllowedTargets = [LocationType.OpenTerrain];
     private static readonly BombType[] AllowedTypesOrdnance = [BombType.HighExplosiveShell];
+    private const int MaxOrdnanceCapacity = 40;
 
-    public M109(string name, int ammunition, double fuel,  KnownLocationType[] targetTypes, BombType[] ordnanceType)
+
+    public M109(string name, double fuel,  LocationType[] targetTypes, BombType[] ordnanceLoad)
         : base(
             name,
-            ValidAmmunition(ammunition),
             ValidFuel(fuel),
             ValidTargets(targetTypes),
-            ValidOrdnanceType(ordnanceType))
+            ValidateLoadout(ordnanceLoad, name))
     {
 
-    }
-    private static int ValidAmmunition(int ammo)
-    {
-        const int maxAmmo = 40;
-        if (ammo > maxAmmo)
-            throw new ArgumentException($"M109 cannot hold more than {maxAmmo} rounds");
-        return ammo;
     }
     private static double ValidFuel(double fuel)
     {
         return fuel;
     }
-    private static KnownLocationType[] ValidTargets(KnownLocationType[] targetTypes)
+    private static LocationType[] ValidTargets(LocationType[] targetTypes)
     {
         TargetValidation.EnsureExactMatch(targetTypes, AllowedTargets, "M109");
         return targetTypes;
     }
-    private static BombType[] ValidOrdnanceType(BombType[] ordnanceType)
+    private static BombType[] ValidateLoadout(BombType[] ordnanceLoad, string unitName)
     {
-        OrdnanceValidation.EnsureExactMatch(ordnanceType, AllowedTypesOrdnance, "M109");
-        return ordnanceType;
-    }
-    
-    
-    public override bool IsAvailableForStrike()
-    {
-        return Ammunition > 0 && Fuel > 0;
-    }
-    protected override void ExecuteStrike()
-    {
-        Ammunition--;
-        Fuel--;
-    }
-}
+        if (ordnanceLoad.Length > MaxOrdnanceCapacity)
+        {
+            throw new ArgumentException($"{unitName} (M109) cannot carry more than {MaxOrdnanceCapacity} bombs. Provided loadout size: {ordnanceLoad.Length}");
+        }
+        OrdnanceValidation.EnsureAllOrdnanceTypesArePermitted(ordnanceLoad, AllowedTypesOrdnance, unitName);
+        return ordnanceLoad;
+    }}

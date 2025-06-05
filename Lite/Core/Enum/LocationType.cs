@@ -1,6 +1,6 @@
 namespace Lite.Core.Enum;
 
-public enum KnownLocationType
+public enum LocationType
 {
     Structures, // F16
     Personnel, // Hermes460

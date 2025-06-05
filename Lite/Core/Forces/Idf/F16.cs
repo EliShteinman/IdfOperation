@@ -6,48 +6,35 @@ namespace Lite.Core.Forces.Idf;
 
 public class F16 : Plane
 {
-    private static readonly KnownLocationType[] AllowedTargets = [KnownLocationType.Structures];
+    private static readonly LocationType[] AllowedTargets = [LocationType.Structures];
     private static readonly BombType[] AllowedTypesOrdnance = [BombType.BombGp500Kg, BombType.BombGp1000Kg];
+    private const int MaxOrdnanceCapacity = 8;
     
-    public F16(string name, int ammunition, double fuel, KnownLocationType[] targetTypes, ISoldier pilot, BombType[] ordnanceType)
+    public F16(string name, double fuel, LocationType[] targetTypes, ISoldier pilot, BombType[] ordnanceLoad)
         : base(name,
-            ValidAmmunition(ammunition),
             ValidFuel(fuel),
             ValidTargets(targetTypes),
-            ValidOrdnanceType(ordnanceType),
+            ValidateLoadout(ordnanceLoad, name),
             pilot)
     {
 
-    }
-    private static int ValidAmmunition(int ammo)
-    {
-        const int maxAmmo = 8;
-        if (ammo > maxAmmo)
-            throw new ArgumentException($"F16 cannot hold more than {maxAmmo} rounds");
-        return ammo;
     }
     private static double ValidFuel(double fuel)
     {
         return fuel;
     }
-    private static KnownLocationType[] ValidTargets(KnownLocationType[] targetTypes)
+    private static LocationType[] ValidTargets(LocationType[] targetTypes)
     {
         TargetValidation.EnsureExactMatch(targetTypes, AllowedTargets, "F16");
         return targetTypes;
     }
-    private static BombType[] ValidOrdnanceType(BombType[] ordnanceType)
+    private static BombType[] ValidateLoadout(BombType[] ordnanceLoad, string unitName)
     {
-        OrdnanceValidation.EnsureExactMatch(ordnanceType, AllowedTypesOrdnance, "F16");
-        return ordnanceType;
-    }
-    
-    public override bool IsAvailableForStrike()
-    {
-        return Ammunition > 0 && Fuel > 0;
-    }
-    protected override void ExecuteStrike()
-    {
-        Ammunition--;
-        Fuel--;
+        if (ordnanceLoad.Length > MaxOrdnanceCapacity)
+        {
+            throw new ArgumentException($"{unitName} (F16) cannot carry more than {MaxOrdnanceCapacity} bombs. Provided loadout size: {ordnanceLoad.Length}");
+        }
+        OrdnanceValidation.EnsureAllOrdnanceTypesArePermitted(ordnanceLoad, AllowedTypesOrdnance, unitName);
+        return ordnanceLoad;
     }
 }

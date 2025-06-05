@@ -1,11 +1,12 @@
+using Lite.Core.Combat;
 using Lite.Core.Enum;
 namespace Lite.Core.Contracts;
 
 public interface IStrikeUnit : INamedEntity
 {
-    KnownLocationType[] TargetTypes { get; }
+    LocationType[] TargetTypes { get; }
     int Ammunition { get; }
     double Fuel { get; }
-    bool Strike();
+    StrikeResult Strike();
     bool IsAvailableForStrike();
 }

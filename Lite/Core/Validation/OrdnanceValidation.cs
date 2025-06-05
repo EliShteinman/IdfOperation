@@ -3,16 +3,20 @@ namespace Lite.Core.Validation;
 
 public class OrdnanceValidation
 {
-    public static void EnsureExactMatch(BombType[] actual, BombType[] allowed, string unitName)
+    public static void EnsureAllOrdnanceTypesArePermitted(BombType[] actualLoadout, BombType[] permittedTypesForUnit, string unitName)
     {
-        if (actual == null || actual.Length == 0)
-            throw new ArgumentException($"{unitName} must have at least one type");
-        if (!actual.OrderBy(x => x).SequenceEqual(allowed.OrderBy(x => x)))
+        if (actualLoadout == null)
         {
-            var allowedList = string.Join(", ", allowed);
-            throw new ArgumentException($"{unitName} must types ammo only: {allowedList}");
-
+            return;
         }
 
+        foreach (var bombType in actualLoadout)
+        {
+            if (!permittedTypesForUnit.Contains(bombType))
+            {
+                var allowedList = string.Join(", ", permittedTypesForUnit);
+                throw new ArgumentException($"{unitName} cannot carry type {bombType}. Permitted types are: {allowedList}");
+            }
+        }
     }
 }

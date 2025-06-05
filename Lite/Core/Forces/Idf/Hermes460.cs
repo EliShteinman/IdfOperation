@@ -6,47 +6,34 @@ namespace Lite.Core.Forces.Idf;
 public class Hermes460 : Drone
 {
     private static readonly BombType[] AllowedTypesOrdnance = [BombType.AntiArmor,BombType.AntiPersonnel];
-    private static readonly KnownLocationType[] AllowedTargets = [KnownLocationType.Personnel, KnownLocationType.Vehicles];
+    private static readonly LocationType[] AllowedTargets = [LocationType.Personnel, LocationType.Vehicles];
+    private const int MaxOrdnanceCapacity = 3;
 
-    public Hermes460(string name, int ammunition, double fuel,  KnownLocationType[] targetTypes, BombType[] ordnanceType)
+
+    public Hermes460(string name, double fuel,  LocationType[] targetTypes, BombType[] ordnanceLoad)
         : base(name,
-            ValidAmmunition(ammunition),
             ValidFuel(fuel),
             ValidTargets(targetTypes),
-            ValidOrdnanceType(ordnanceType))
+            ValidateLoadout(ordnanceLoad, name))
     {
 
-    }
-    private static int ValidAmmunition(int ammo)
-    {
-        const int maxAmmo = 3;
-        if (ammo > maxAmmo)
-            throw new ArgumentException($"Hermes460 cannot hold more than {maxAmmo} rounds");
-        return ammo;
     }
     private static double ValidFuel(double fuel)
     {
         return fuel;
     }
-    private static BombType[] ValidOrdnanceType(BombType[] ordnanceType)
-    {
-        OrdnanceValidation.EnsureExactMatch(ordnanceType, AllowedTypesOrdnance, "Hermes460");
-        return ordnanceType;
-    }
-    private static KnownLocationType[] ValidTargets(KnownLocationType[] targetTypes)
+    private static LocationType[] ValidTargets(LocationType[] targetTypes)
     {
         TargetValidation.EnsureExactMatch(targetTypes, AllowedTargets, "Hermes460");
         return targetTypes;
     }
-
-    
-    public override bool IsAvailableForStrike()
+    private static BombType[] ValidateLoadout(BombType[] ordnanceLoad, string unitName)
     {
-        return Ammunition > 0 && Fuel > 0;
-    }
-    protected override void ExecuteStrike()
-    {
-        Ammunition--;
-        Fuel--;
-    }
+        if (ordnanceLoad.Length > MaxOrdnanceCapacity)
+        {
+            throw new ArgumentException($"{unitName} (Hermes460) cannot carry more than {MaxOrdnanceCapacity} bombs. Provided loadout size: {ordnanceLoad.Length}");
+        }
+        OrdnanceValidation.EnsureAllOrdnanceTypesArePermitted(ordnanceLoad, AllowedTypesOrdnance, unitName);
+        return ordnanceLoad;
+    }    
 }
