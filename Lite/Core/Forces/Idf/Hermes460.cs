@@ -5,16 +5,19 @@ namespace Lite.Core.Forces.Idf;
 
 public class Hermes460 : Drone
 {
+    private static readonly BombType[] AllowedTypesOrdnance = [BombType.AntiArmor,BombType.AntiPersonnel];
+    private static readonly KnownLocationType[] AllowedTargets = [KnownLocationType.Personnel, KnownLocationType.Vehicles];
+
     public Hermes460(string name, int ammunition, double fuel,  KnownLocationType[] targetTypes, BombType[] ordnanceType)
         : base(name,
-            ValidAmmuition(ammunition),
+            ValidAmmunition(ammunition),
             ValidFuel(fuel),
             ValidTargets(targetTypes),
             ValidOrdnanceType(ordnanceType))
     {
 
     }
-    private static int ValidAmmuition(int ammo)
+    private static int ValidAmmunition(int ammo)
     {
         const int maxAmmo = 3;
         if (ammo > maxAmmo)
@@ -25,26 +28,22 @@ public class Hermes460 : Drone
     {
         return fuel;
     }
-    
-    private static readonly BombType[] AllowedTypesOrdnance = [BombType.AntiArmor,BombType.AntiPersonnel];
     private static BombType[] ValidOrdnanceType(BombType[] ordnanceType)
     {
         OrdnanceValidation.EnsureExactMatch(ordnanceType, AllowedTypesOrdnance, "Hermes460");
         return ordnanceType;
     }
-
-    private static readonly KnownLocationType[] AllowedTargets = [KnownLocationType.Personnel, KnownLocationType.Vehicles];
     private static KnownLocationType[] ValidTargets(KnownLocationType[] targetTypes)
     {
         TargetValidation.EnsureExactMatch(targetTypes, AllowedTargets, "Hermes460");
         return targetTypes;
     }
 
+    
     public override bool IsAvailableForStrike()
     {
         return Ammunition > 0 && Fuel > 0;
     }
-
     protected override void ExecuteStrike()
     {
         Ammunition--;

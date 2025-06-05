@@ -6,9 +6,12 @@ namespace Lite.Core.Forces.Idf;
 
 public class F16 : Plane
 {
+    private static readonly KnownLocationType[] AllowedTargets = [KnownLocationType.Structures];
+    private static readonly BombType[] AllowedTypesOrdnance = [BombType.BombGp500Kg, BombType.BombGp1000Kg];
+    
     public F16(string name, int ammunition, double fuel, KnownLocationType[] targetTypes, ISoldier pilot, BombType[] ordnanceType)
         : base(name,
-            ValidAmmuition(ammunition),
+            ValidAmmunition(ammunition),
             ValidFuel(fuel),
             ValidTargets(targetTypes),
             ValidOrdnanceType(ordnanceType),
@@ -16,7 +19,7 @@ public class F16 : Plane
     {
 
     }
-    private static int ValidAmmuition(int ammo)
+    private static int ValidAmmunition(int ammo)
     {
         const int maxAmmo = 8;
         if (ammo > maxAmmo)
@@ -27,26 +30,21 @@ public class F16 : Plane
     {
         return fuel;
     }
-
-    private static readonly KnownLocationType[] AllowedTargets = [KnownLocationType.Structures];
     private static KnownLocationType[] ValidTargets(KnownLocationType[] targetTypes)
     {
         TargetValidation.EnsureExactMatch(targetTypes, AllowedTargets, "F16");
         return targetTypes;
     }
-
-    private static readonly BombType[] AllowedTypesOrdnance = [BombType.BombGp500Kg, BombType.BombGp1000Kg];
     private static BombType[] ValidOrdnanceType(BombType[] ordnanceType)
     {
         OrdnanceValidation.EnsureExactMatch(ordnanceType, AllowedTypesOrdnance, "F16");
         return ordnanceType;
     }
-
+    
     public override bool IsAvailableForStrike()
     {
         return Ammunition > 0 && Fuel > 0;
     }
-
     protected override void ExecuteStrike()
     {
         Ammunition--;

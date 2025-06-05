@@ -4,17 +4,20 @@ namespace Lite.Core.Forces.Idf;
 
 public class M109 : Artillery
 {
+    private static readonly KnownLocationType[] AllowedTargets = [KnownLocationType.OpenTerrain];
+    private static readonly BombType[] AllowedTypesOrdnance = [BombType.HighExplosiveShell];
+
     public M109(string name, int ammunition, double fuel,  KnownLocationType[] targetTypes, BombType[] ordnanceType)
         : base(
             name,
-            ValidAmmuition(ammunition),
-        ValidFuel(fuel),
+            ValidAmmunition(ammunition),
+            ValidFuel(fuel),
             ValidTargets(targetTypes),
             ValidOrdnanceType(ordnanceType))
     {
 
     }
-    private static int ValidAmmuition(int ammo)
+    private static int ValidAmmunition(int ammo)
     {
         const int maxAmmo = 40;
         if (ammo > maxAmmo)
@@ -25,25 +28,22 @@ public class M109 : Artillery
     {
         return fuel;
     }
-
-    private static readonly KnownLocationType[] AllowedTargets = [KnownLocationType.OpenTerrain];
     private static KnownLocationType[] ValidTargets(KnownLocationType[] targetTypes)
     {
         TargetValidation.EnsureExactMatch(targetTypes, AllowedTargets, "M109");
         return targetTypes;
     }
-
-    private static readonly BombType[] AllowedTypesOrdnance = [BombType.HighExplosiveShell];
     private static BombType[] ValidOrdnanceType(BombType[] ordnanceType)
     {
         OrdnanceValidation.EnsureExactMatch(ordnanceType, AllowedTypesOrdnance, "M109");
         return ordnanceType;
     }
+    
+    
     public override bool IsAvailableForStrike()
     {
         return Ammunition > 0 && Fuel > 0;
     }
-
     protected override void ExecuteStrike()
     {
         Ammunition--;
