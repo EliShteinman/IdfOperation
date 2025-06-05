@@ -10,6 +10,6 @@ class Program
     {
         var initializer = new SimulationInitializer();
         initializer.Initialize();
-        
+
     }
 }
