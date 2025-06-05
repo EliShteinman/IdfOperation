@@ -44,4 +44,9 @@ public class HamasOrganization
             return _instance;
         }
     }
+
+    public void AddMember(TerroristBase terrorist)
+    {
+        Members.Add(terrorist);
+    }
 }

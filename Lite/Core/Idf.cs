@@ -25,6 +25,7 @@ public class Idf
         {
             throw new ArgumentException("Commander must be ChiefOfStaff");
         }
+
         return commander;
     }
 
@@ -34,14 +35,17 @@ public class Idf
         {
             throw new ArgumentException("Name required");
         }
+
         return name;
     }
+
     public static Idf CreateInstance(string name, DateTime date, ISoldier commander)
     {
         if (_instance == null)
         {
             _instance = new Idf(name, date, commander);
         }
+
         return _instance;
     }
 
@@ -53,7 +57,14 @@ public class Idf
             {
                 throw new InvalidOperationException("Must call CreateInstance(...) before accessing the instance.");
             }
+
             return _instance;
         }
     }
+
+    public void AddStrikeUnit(IStrikeUnit unit)
+    {
+        StrikeUnits.Add(unit);   
+    }
+
 }
