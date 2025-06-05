@@ -26,7 +26,7 @@ public class HamasOrganization
 
     public static HamasOrganization CreateInstance(string name, DateTime date, TerroristBase leader)
     {
-        if (_instance == null)
+        if (_instance is null)
         {
             _instance = new HamasOrganization(name, date, leader);
         }
@@ -37,7 +37,7 @@ public class HamasOrganization
     {
         get
         {
-            if (_instance == null)
+            if (_instance is null)
             {
                 throw new InvalidOperationException("Must call CreateInstance(...) before accessing the instance.");
             }

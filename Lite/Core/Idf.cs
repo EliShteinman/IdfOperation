@@ -41,7 +41,7 @@ public class Idf
 
     public static Idf CreateInstance(string name, DateTime date, ISoldier commander)
     {
-        if (_instance == null)
+        if (_instance is null)
         {
             _instance = new Idf(name, date, commander);
         }
@@ -53,7 +53,7 @@ public class Idf
     {
         get
         {
-            if (_instance == null)
+            if (_instance is null)
             {
                 throw new InvalidOperationException("Must call CreateInstance(...) before accessing the instance.");
             }
