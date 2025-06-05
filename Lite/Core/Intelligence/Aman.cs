@@ -9,7 +9,7 @@ public class Aman
     {
         Messages.Add(message);
     }
-    
+
     private Aman()
     {
         Messages = [];
@@ -33,6 +33,6 @@ public class Aman
                 throw new InvalidOperationException("Must call CreateInstance(...) before accessing the instance.");
             }
             return _instance;
-        }   
+        }
     }
 }

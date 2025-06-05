@@ -64,7 +64,7 @@ public class Idf
 
     public void AddStrikeUnit(IStrikeUnit unit)
     {
-        StrikeUnits.Add(unit);   
+        StrikeUnits.Add(unit);
     }
 
 }
