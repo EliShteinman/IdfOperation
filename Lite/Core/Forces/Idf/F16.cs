@@ -1,16 +1,17 @@
 using Lite.Core.Contracts;
 using Lite.Core.Validation;
+using Lite.Core.Enum;
 
 namespace Lite.Core.Forces.Idf;
 
 public class F16 : Plane
 {
-    public F16(string name, int ammunition, double fuel, int strikeLimit, string[] targetTypes, ISoldier pilot)
+    public F16(string name, int ammunition, double fuel, string[] targetTypes, ISoldier pilot, BombType ordnanceType)
         : base(name,
             ValidAmmuition(ammunition),
             ValidFuel(fuel),
-            ValidStrikeLimit(strikeLimit),
             ValidTargets(targetTypes),
+            ValidOrdnanceType(ordnanceType),
             pilot)
     {
 
@@ -26,10 +27,7 @@ public class F16 : Plane
     {
         return fuel;
     }
-    private static int ValidStrikeLimit(int strikeLimit)
-    {
-        return strikeLimit;
-    }
+
     private static readonly string[] AllowedTargets = ["Structures"];
     private static string[] ValidTargets(string[] targetTypes)
     {
@@ -37,15 +35,19 @@ public class F16 : Plane
         return targetTypes;
     }
 
+    private static BombType ValidOrdnanceType(BombType ordnanceType)
+    {
+        return ordnanceType;
+    }
+
     public override bool IsAvailableForStrike()
     {
-        return Ammunition > 0 && Fuel > 0 && StrikeCycleLimit > 0;
+        return Ammunition > 0 && Fuel > 0;
     }
 
     protected override void ExecuteStrike()
     {
         Ammunition--;
         Fuel--;
-        StrikeCycleLimit--;
     }
 }

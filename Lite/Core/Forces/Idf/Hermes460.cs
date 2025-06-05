@@ -1,15 +1,16 @@
 using Lite.Core.Validation;
+using Lite.Core.Enum;
 
 namespace Lite.Core.Forces.Idf;
 
 public class Hermes460 : Drone
 {
-    public Hermes460(string name, int ammunition, double fuel, int strikeLimit, string[] targetTypes)
+    public Hermes460(string name, int ammunition, double fuel,  string[] targetTypes, BombType ordnanceType)
         : base(name,
             ValidAmmuition(ammunition),
             ValidFuel(fuel),
-            ValidStrikeLimit(strikeLimit),
-            ValidTargets(targetTypes))
+            ValidTargets(targetTypes),
+            ValidOrdnanceType(ordnanceType))
     {
 
     }
@@ -24,10 +25,11 @@ public class Hermes460 : Drone
     {
         return fuel;
     }
-    private static int ValidStrikeLimit(int strikeLimit)
+    private static BombType ValidOrdnanceType(BombType ordnanceType)
     {
-        return strikeLimit;
+        return ordnanceType;
     }
+
     private static readonly string[] AllowedTargets = ["Personnel", "Vehicles"];
     private static string[] ValidTargets(string[] targetTypes)
     {
@@ -37,13 +39,12 @@ public class Hermes460 : Drone
 
     public override bool IsAvailableForStrike()
     {
-        return Ammunition > 0 && Fuel > 0 && StrikeCycleLimit > 0;
+        return Ammunition > 0 && Fuel > 0;
     }
 
     protected override void ExecuteStrike()
     {
         Ammunition--;
         Fuel--;
-        StrikeCycleLimit--;
     }
 }
