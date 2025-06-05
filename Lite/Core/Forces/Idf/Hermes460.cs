@@ -5,7 +5,7 @@ namespace Lite.Core.Forces.Idf;
 
 public class Hermes460 : Drone
 {
-    public Hermes460(string name, int ammunition, double fuel,  string[] targetTypes, BombType ordnanceType)
+    public Hermes460(string name, int ammunition, double fuel,  string[] targetTypes, BombType[] ordnanceType)
         : base(name,
             ValidAmmuition(ammunition),
             ValidFuel(fuel),
@@ -25,8 +25,11 @@ public class Hermes460 : Drone
     {
         return fuel;
     }
-    private static BombType ValidOrdnanceType(BombType ordnanceType)
+    
+    private static readonly BombType[] AllowedTypesOrdnance = [BombType.AntiArmor,BombType.AntiPersonnel];
+    private static BombType[] ValidOrdnanceType(BombType[] ordnanceType)
     {
+        OrdnanceValidation.EnsureExactMatch(ordnanceType, AllowedTypesOrdnance, "Hermes460");
         return ordnanceType;
     }
 

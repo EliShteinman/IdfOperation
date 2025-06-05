@@ -4,7 +4,7 @@ namespace Lite.Core.Forces.Idf;
 
 public class M109 : Artillery
 {
-    public M109(string name, int ammunition, double fuel,  string[] targetTypes, BombType ordnanceType)
+    public M109(string name, int ammunition, double fuel,  string[] targetTypes, BombType[] ordnanceType)
         : base(
             name,
             ValidAmmuition(ammunition),
@@ -32,8 +32,11 @@ public class M109 : Artillery
         TargetValidation.EnsureExactMatch(targetTypes, AllowedTargets, "M109");
         return targetTypes;
     }
-    private static BombType ValidOrdnanceType(BombType ordnanceType)
+
+    private static readonly BombType[] AllowedTypesOrdnance = [BombType.HighExplosiveShell];
+    private static BombType[] ValidOrdnanceType(BombType[] ordnanceType)
     {
+        OrdnanceValidation.EnsureExactMatch(ordnanceType, AllowedTypesOrdnance, "M109");
         return ordnanceType;
     }
     public override bool IsAvailableForStrike()

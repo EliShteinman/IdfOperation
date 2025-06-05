@@ -6,7 +6,7 @@ namespace Lite.Core.Forces.Idf;
 
 public class F16 : Plane
 {
-    public F16(string name, int ammunition, double fuel, string[] targetTypes, ISoldier pilot, BombType ordnanceType)
+    public F16(string name, int ammunition, double fuel, string[] targetTypes, ISoldier pilot, BombType[] ordnanceType)
         : base(name,
             ValidAmmuition(ammunition),
             ValidFuel(fuel),
@@ -35,8 +35,10 @@ public class F16 : Plane
         return targetTypes;
     }
 
-    private static BombType ValidOrdnanceType(BombType ordnanceType)
+    private static readonly BombType[] AllowedTypesOrdnance = [BombType.BombGp500Kg, BombType.BombGp1000Kg];
+    private static BombType[] ValidOrdnanceType(BombType[] ordnanceType)
     {
+        OrdnanceValidation.EnsureExactMatch(ordnanceType, AllowedTypesOrdnance, "F16");
         return ordnanceType;
     }
 

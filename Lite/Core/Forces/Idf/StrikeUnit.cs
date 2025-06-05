@@ -10,13 +10,13 @@ public abstract class StrikeUnit : IStrikeUnit
     public int Ammunition { get; protected set; }
     public double Fuel { get; protected set; }
     
-    public BombType OrdnanceType { get; protected set; }
+    public BombType[] OrdnanceType { get; protected set; }
 
     protected StrikeUnit(string name,
         int ammunition,
         double fuel,
         string[] targetTypes,
-        BombType ordnanceType)
+        BombType[] ordnanceType)
     {
         if (string.IsNullOrWhiteSpace(name)) throw new ArgumentException("Name required");
         if (targetTypes == null || targetTypes.Length == 0)
