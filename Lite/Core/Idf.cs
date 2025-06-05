@@ -5,7 +5,7 @@ namespace Lite.Core;
 
 public class Idf
 {
-    private static Idf _instance;
+    private static Idf? _instance;
     public string Name { get; private set; }
     public DateTime Date { get; private set; }
     public List<IStrikeUnit> StrikeUnits { get; private set; }
