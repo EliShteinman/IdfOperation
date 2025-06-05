@@ -1,6 +1,6 @@
-using Lite.Domain.Enum;
+using Lite.Core.Enum;
 
-namespace Lite.Domain.Contracts;
+namespace Lite.Core.Contracts;
 
 public interface ISoldier : INamedEntity
 {

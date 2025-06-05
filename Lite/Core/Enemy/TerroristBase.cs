@@ -1,7 +1,7 @@
-using Lite.Domain.Combat.Weapons;
-using Lite.Domain.Contracts;
+using Lite.Core.Combat.Weapons;
+using Lite.Core.Contracts;
 
-namespace Lite.Domain.Enemy;
+namespace Lite.Core.Enemy;
 
 public abstract class TerroristBase : ITerrorist
 {

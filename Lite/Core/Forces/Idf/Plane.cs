@@ -1,7 +1,7 @@
-using Lite.Domain.Contracts;
-using Lite.Domain.Enum;
+using Lite.Core.Contracts;
+using Lite.Core.Enum;
 
-namespace Lite.Domain.Forces.Idf;
+namespace Lite.Core.Forces.Idf;
 
 public abstract class Plane : StrikeUnit
 {

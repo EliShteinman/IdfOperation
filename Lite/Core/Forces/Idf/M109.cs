@@ -1,13 +1,15 @@
-using Lite.Domain.Validation;
-namespace Lite.Domain.Forces.Idf;
+using Lite.Core.Validation;
 
-public class Hermes460 : Drone
+namespace Lite.Core.Forces.Idf;
+
+public class M109 : Artillery
 {
-    public Hermes460(string name, int ammunition, double fuel, int strikeLimit, string[] targetTypes)
-        : base(name,
+    public M109(string name, int ammunition, double fuel, int strikeLimit, string[] targetTypes)
+        : base(
+            name,
             ValidAmmuition(ammunition),
-            ValidFuel(fuel),
-            ValidStrikeLimit(strikeLimit),
+        ValidFuel(fuel),
+        ValidStrikeLimit(strikeLimit),
             ValidTargets(targetTypes))
     {
 
@@ -16,7 +18,7 @@ public class Hermes460 : Drone
     {
         const int maxAmmo = 40;
         if (ammo > maxAmmo)
-            throw new ArgumentException($"Hermes460 cannot hold more than {maxAmmo} rounds");
+            throw new ArgumentException($"M109 cannot hold more than {maxAmmo} rounds");
         return ammo;
     }
     private static double ValidFuel(double fuel)
@@ -27,10 +29,10 @@ public class Hermes460 : Drone
     {
         return strikeLimit;
     }
-    private static readonly string[] AllowedTargets = ["Buildings"];
+    private static readonly string[] AllowedTargets = ["OpenTerrain"];
     private static string[] ValidTargets(string[] targetTypes)
     {
-        TargetValidation.EnsureExactMatch(targetTypes, AllowedTargets, "F16");
+        TargetValidation.EnsureExactMatch(targetTypes, AllowedTargets, "M109");
         return targetTypes;
     }
 

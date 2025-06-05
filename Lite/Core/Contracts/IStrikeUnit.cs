@@ -1,4 +1,4 @@
-namespace Lite.Domain.Contracts;
+namespace Lite.Core.Contracts;
 
 public interface IStrikeUnit : INamedEntity
 {

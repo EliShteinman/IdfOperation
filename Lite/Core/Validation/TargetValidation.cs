@@ -1,4 +1,4 @@
-namespace Lite.Domain.Validation;
+namespace Lite.Core.Validation;
 
 public static class TargetValidation
 {

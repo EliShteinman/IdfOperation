@@ -1,4 +1,4 @@
-namespace Lite.Domain.Enum;
+namespace Lite.Core.Enum;
 
 public enum Assignments
 {

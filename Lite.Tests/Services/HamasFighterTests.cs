@@ -1,5 +1,5 @@
-using Lite.Domain.Enemy;
-using Lite.Domain.Combat.Weapons;
+using Lite.Core.Combat.Weapons;
+using Lite.Core.Enemy;
 using Xunit;
 
 namespace Lite.Tests.Domain;

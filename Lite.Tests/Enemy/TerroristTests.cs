@@ -1,5 +1,6 @@
-using Lite.Domain.Enemy;
-using Lite.Domain.Combat.Weapons;
+using Lite.Core.Combat.Weapons;
+using Lite.Core.Enemy;
+
 namespace Lite.Tests.Enemy;
 
 public class TerroristTests

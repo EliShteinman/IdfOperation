@@ -1,6 +1,7 @@
-﻿using Lite.Domain.Combat.Weapons;
-using Lite.Domain.Enemy;
-using Lite.Application.Services;
+﻿using Lite.Application.Services;
+using Lite.Core.Combat.Weapons;
+using Lite.Core.Enemy;
+
 namespace Lite;
 
 class Program

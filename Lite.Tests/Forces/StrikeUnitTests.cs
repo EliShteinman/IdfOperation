@@ -1,6 +1,6 @@
-using Lite.Domain.Forces.Idf;
-using Lite.Domain.Enum;
-using Lite.Domain.Contracts;
+using Lite.Core.Contracts;
+using Lite.Core.Enum;
+using Lite.Core.Forces.Idf;
 using Xunit;
 
 file sealed class DummyPilot : ISoldier

@@ -1,5 +1,6 @@
-using Lite.Domain.Combat.Weapons;
-namespace Lite.Domain.Contracts;
+using Lite.Core.Combat.Weapons;
+
+namespace Lite.Core.Contracts;
 
 public interface ITerrorist : INamedEntity
 {

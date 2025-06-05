@@ -1,24 +1,23 @@
-using Lite.Domain.Validation;
-using Lite.Domain.Contracts;
-namespace Lite.Domain.Forces.Idf;
+using Lite.Core.Validation;
 
-public class F16 : Plane
+namespace Lite.Core.Forces.Idf;
+
+public class Hermes460 : Drone
 {
-    public F16(string name, int ammunition, double fuel, int strikeLimit, string[] targetTypes, ISoldier pilot)
+    public Hermes460(string name, int ammunition, double fuel, int strikeLimit, string[] targetTypes)
         : base(name,
             ValidAmmuition(ammunition),
             ValidFuel(fuel),
             ValidStrikeLimit(strikeLimit),
-            ValidTargets(targetTypes),
-            pilot)
+            ValidTargets(targetTypes))
     {
 
     }
     private static int ValidAmmuition(int ammo)
     {
-        const int maxAmmo = 8;
+        const int maxAmmo = 3;
         if (ammo > maxAmmo)
-            throw new ArgumentException($"F16 cannot hold more than {maxAmmo} rounds");
+            throw new ArgumentException($"Hermes460 cannot hold more than {maxAmmo} rounds");
         return ammo;
     }
     private static double ValidFuel(double fuel)
@@ -29,10 +28,10 @@ public class F16 : Plane
     {
         return strikeLimit;
     }
-    private static readonly string[] AllowedTargets = ["Buildings"];
+    private static readonly string[] AllowedTargets = ["Personnel", "Vehicles"];
     private static string[] ValidTargets(string[] targetTypes)
     {
-        TargetValidation.EnsureExactMatch(targetTypes, AllowedTargets, "F16");
+        TargetValidation.EnsureExactMatch(targetTypes, AllowedTargets, "Hermes460");
         return targetTypes;
     }
 

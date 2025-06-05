@@ -1,6 +1,6 @@
-using Lite.Domain.Combat.Weapons;
+using Lite.Core.Combat.Weapons;
 
-namespace Lite.Domain.Enemy;
+namespace Lite.Core.Enemy;
 
 public sealed class HamasFighter : TerroristBase
 {

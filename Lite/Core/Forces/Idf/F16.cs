@@ -1,23 +1,25 @@
-using Lite.Domain.Validation;
-namespace Lite.Domain.Forces.Idf;
+using Lite.Core.Contracts;
+using Lite.Core.Validation;
 
-public class M109 : Artillery
+namespace Lite.Core.Forces.Idf;
+
+public class F16 : Plane
 {
-    public M109(string name, int ammunition, double fuel, int strikeLimit, string[] targetTypes)
-        : base(
-            name,
+    public F16(string name, int ammunition, double fuel, int strikeLimit, string[] targetTypes, ISoldier pilot)
+        : base(name,
             ValidAmmuition(ammunition),
-        ValidFuel(fuel),
-        ValidStrikeLimit(strikeLimit),
-            ValidTargets(targetTypes))
+            ValidFuel(fuel),
+            ValidStrikeLimit(strikeLimit),
+            ValidTargets(targetTypes),
+            pilot)
     {
 
     }
     private static int ValidAmmuition(int ammo)
     {
-        const int maxAmmo = 40;
+        const int maxAmmo = 8;
         if (ammo > maxAmmo)
-            throw new ArgumentException($"M109 cannot hold more than {maxAmmo} rounds");
+            throw new ArgumentException($"F16 cannot hold more than {maxAmmo} rounds");
         return ammo;
     }
     private static double ValidFuel(double fuel)
@@ -28,7 +30,7 @@ public class M109 : Artillery
     {
         return strikeLimit;
     }
-    private static readonly string[] AllowedTargets = ["Buildings"];
+    private static readonly string[] AllowedTargets = ["Structures"];
     private static string[] ValidTargets(string[] targetTypes)
     {
         TargetValidation.EnsureExactMatch(targetTypes, AllowedTargets, "F16");

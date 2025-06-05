@@ -1,4 +1,4 @@
-namespace Lite.Domain.Combat.Weapons;
+namespace Lite.Core.Combat.Weapons;
 
 public sealed class Knife : WeaponBase
 {

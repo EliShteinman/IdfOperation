@@ -1,4 +1,5 @@
-using Lite.Domain.Combat.Weapons;
+using Lite.Core.Combat.Weapons;
+
 namespace Lite.Tests.Combat;
 
 public class WeaponsTests

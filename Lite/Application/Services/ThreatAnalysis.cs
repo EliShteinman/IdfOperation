@@ -1,5 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
-using Lite.Domain.Contracts;
+using Lite.Core.Contracts;
 
 namespace Lite.Application.Services;
 

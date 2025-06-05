@@ -1,6 +1,6 @@
-using Lite.Domain.Contracts;
+using Lite.Core.Contracts;
 
-namespace Lite.Domain.Forces.Idf;
+namespace Lite.Core.Forces.Idf;
 
 public abstract class StrikeUnit : IStrikeUnit
 {

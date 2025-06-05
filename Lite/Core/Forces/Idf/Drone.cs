@@ -1,4 +1,4 @@
-namespace Lite.Domain.Forces.Idf;
+namespace Lite.Core.Forces.Idf;
 
 public abstract class Drone : StrikeUnit
 {
