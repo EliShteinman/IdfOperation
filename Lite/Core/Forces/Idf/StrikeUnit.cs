@@ -6,7 +6,7 @@ namespace Lite.Core.Forces.Idf;
 public abstract class StrikeUnit : IStrikeUnit
 {
     public string Name { get; protected set; }
-    public string[] TargetTypes { get; protected set; }
+    public KnownLocationType[] TargetTypes { get; protected set; }
     public int Ammunition { get; protected set; }
     public double Fuel { get; protected set; }
     
@@ -15,7 +15,7 @@ public abstract class StrikeUnit : IStrikeUnit
     protected StrikeUnit(string name,
         int ammunition,
         double fuel,
-        string[] targetTypes,
+        KnownLocationType[] targetTypes,
         BombType[] ordnanceType)
     {
         if (string.IsNullOrWhiteSpace(name)) throw new ArgumentException("Name required");

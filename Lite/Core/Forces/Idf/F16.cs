@@ -6,7 +6,7 @@ namespace Lite.Core.Forces.Idf;
 
 public class F16 : Plane
 {
-    public F16(string name, int ammunition, double fuel, string[] targetTypes, ISoldier pilot, BombType[] ordnanceType)
+    public F16(string name, int ammunition, double fuel, KnownLocationType[] targetTypes, ISoldier pilot, BombType[] ordnanceType)
         : base(name,
             ValidAmmuition(ammunition),
             ValidFuel(fuel),
@@ -28,8 +28,8 @@ public class F16 : Plane
         return fuel;
     }
 
-    private static readonly string[] AllowedTargets = ["Structures"];
-    private static string[] ValidTargets(string[] targetTypes)
+    private static readonly KnownLocationType[] AllowedTargets = [KnownLocationType.Structures];
+    private static KnownLocationType[] ValidTargets(KnownLocationType[] targetTypes)
     {
         TargetValidation.EnsureExactMatch(targetTypes, AllowedTargets, "F16");
         return targetTypes;

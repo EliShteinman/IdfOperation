@@ -4,7 +4,7 @@ namespace Lite.Core.Forces.Idf;
 
 public class M109 : Artillery
 {
-    public M109(string name, int ammunition, double fuel,  string[] targetTypes, BombType[] ordnanceType)
+    public M109(string name, int ammunition, double fuel,  KnownLocationType[] targetTypes, BombType[] ordnanceType)
         : base(
             name,
             ValidAmmuition(ammunition),
@@ -26,8 +26,8 @@ public class M109 : Artillery
         return fuel;
     }
 
-    private static readonly string[] AllowedTargets = ["OpenTerrain"];
-    private static string[] ValidTargets(string[] targetTypes)
+    private static readonly KnownLocationType[] AllowedTargets = [KnownLocationType.OpenTerrain];
+    private static KnownLocationType[] ValidTargets(KnownLocationType[] targetTypes)
     {
         TargetValidation.EnsureExactMatch(targetTypes, AllowedTargets, "M109");
         return targetTypes;
