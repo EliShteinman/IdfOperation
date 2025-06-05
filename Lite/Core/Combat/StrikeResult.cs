@@ -5,7 +5,7 @@ namespace Lite.Core.Combat;
 public class StrikeResult
 {
     public bool WasSuccess { get; }
-    
+
     public BombType? BombUsed { get; }
 
     public string OutcomeMessage { get; }

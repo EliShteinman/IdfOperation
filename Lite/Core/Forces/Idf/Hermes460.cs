@@ -5,12 +5,12 @@ namespace Lite.Core.Forces.Idf;
 
 public class Hermes460 : Drone
 {
-    private static readonly BombType[] AllowedTypesOrdnance = [BombType.AntiArmor,BombType.AntiPersonnel];
+    private static readonly BombType[] AllowedTypesOrdnance = [BombType.AntiArmor, BombType.AntiPersonnel];
     private static readonly LocationType[] AllowedTargets = [LocationType.Personnel, LocationType.Vehicles];
     private const int MaxOrdnanceCapacity = 3;
 
 
-    public Hermes460(string name, double fuel,  LocationType[] targetTypes, BombType[] ordnanceLoad)
+    public Hermes460(string name, double fuel, LocationType[] targetTypes, BombType[] ordnanceLoad)
         : base(name,
             ValidFuel(fuel),
             ValidTargets(targetTypes),
@@ -35,5 +35,5 @@ public class Hermes460 : Drone
         }
         OrdnanceValidation.EnsureAllOrdnanceTypesArePermitted(ordnanceLoad, AllowedTypesOrdnance, unitName);
         return ordnanceLoad;
-    }    
+    }
 }

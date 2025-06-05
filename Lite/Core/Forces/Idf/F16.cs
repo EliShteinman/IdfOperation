@@ -9,7 +9,7 @@ public class F16 : Plane
     private static readonly LocationType[] AllowedTargets = [LocationType.Structures];
     private static readonly BombType[] AllowedTypesOrdnance = [BombType.BombGp500Kg, BombType.BombGp1000Kg];
     private const int MaxOrdnanceCapacity = 8;
-    
+
     public F16(string name, double fuel, LocationType[] targetTypes, ISoldier pilot, BombType[] ordnanceLoad)
         : base(name,
             ValidFuel(fuel),

@@ -9,7 +9,7 @@ public class M109 : Artillery
     private const int MaxOrdnanceCapacity = 40;
 
 
-    public M109(string name, double fuel,  LocationType[] targetTypes, BombType[] ordnanceLoad)
+    public M109(string name, double fuel, LocationType[] targetTypes, BombType[] ordnanceLoad)
         : base(
             name,
             ValidFuel(fuel),
@@ -35,4 +35,5 @@ public class M109 : Artillery
         }
         OrdnanceValidation.EnsureAllOrdnanceTypesArePermitted(ordnanceLoad, AllowedTypesOrdnance, unitName);
         return ordnanceLoad;
-    }}
+    }
+}
